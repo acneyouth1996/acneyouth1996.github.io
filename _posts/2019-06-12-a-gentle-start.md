@@ -6,7 +6,7 @@ priority: 440000
 title: “A Gentle Start to learning theory”
 tags: [Machine Learning]
 excerpt: Machine Learning
-img: ml.jpg
+img: ml.png
 date: 2019-06-12 12:00:00
 ---
 
