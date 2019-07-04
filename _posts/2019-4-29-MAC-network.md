@@ -4,6 +4,7 @@ comments: true
 mathjax: true
 priority: 440000
 title: “MAC-Network --- Compositional Attention Networks For Machine Reasoning”
+img: macnet.png
 tags: [NLP,Computer Vision, Machine Learning]
 excerpt: 
 date: 2019-04-29 12:00:00
