@@ -5,6 +5,7 @@ priority: 440000
 title: “Fight Club”
 tags: [film]
 excerpt: film
+img: fclub.png
 date: 2019-06-13 12:00:00
 ---
 
