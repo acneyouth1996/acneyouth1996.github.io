@@ -1,5 +1,5 @@
 title: YONG HUANG
-email: your-email@domain.com
+email: yh849@cornell.edu
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -17,15 +17,15 @@ about-author:  Hi, I'm Yong Huang(黄勇), a master student studying Information
         If you feel like getting in touch with me, feel free to send me an email.
 
 # Contact links
-email: # Add your Email address
-phone: # Add your Phone number
-website: # Add your website, do not add http://
-linkedin: # Add your Linkedin handle
-github: artemsheludko # Add your Github handle
-twitter: '@artemsheludko_' # Add your Twitter handle
-facebook: # Add your Facebook handle
-instagram: # Add your Instagram handle
-pinterest: # Add your Pinterest handle
+email: yh849@cornell.edu # Add your Email address
+phone: 9293191866 # Add your Phone number
+website: yonglhuang.com # Add your website, do not add http://
+linkedin: https://www.linkedin.com/in/yong-huang-37165616a/ # Add your Linkedin handle
+github: acneyouth1996 # Add your Github handle
+twitter: '@HuangYo64614728' # Add your Twitter handle
+facebook:  ct_hy_1996 # Add your Facebook handle
+instagram: ct_hy_1996# Add your Instagram handle
+
 
 # Newsletter
 mailchimp: # Add your MailChimp form identifier.
