@@ -37,7 +37,7 @@ mathjax:   true
 
 # Tracker
 # analytics: # Google Analytics
-google_analytics: UA-139551113-1
+analytics: UA-139551113-1
 
 # Paginate
 paginate: 10
