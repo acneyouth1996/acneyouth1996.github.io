@@ -9,7 +9,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: Adam Neilson # add your name
+author: YONG HUANG # add your name
 author-pic: adam-face.jpg
 about-author: My name is Adam Neilson. I’m a full-time adventure travel blogger and photographer who’s been exploring the world for over 2 years.
 
@@ -28,10 +28,13 @@ pinterest: # Add your Pinterest handle
 mailchimp: # Add your MailChimp form identifier.
 
 # Disqus
-discus_identifier: mr-brown # Add your discus identifier
+discus_identifier: disqus_ShueA3ug5U # Add your discus identifier
+
+mathjax:   true
 
 # Tracker
-analytics: # Google Analytics
+# analytics: # Google Analytics
+google_analytics: UA-139551113-1
 
 # Paginate
 paginate: 6
