@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 comments: true
 mathjax: true
 priority: 440000
@@ -8,6 +8,8 @@ tags: [linux]
 img: linux.jpg
 date: 2019-06-10 12:00:00
 ---
+
+
 
 ### Part 1: ssh connection
 1. connect using username and password authentication: **ssh username@clould_ip**
