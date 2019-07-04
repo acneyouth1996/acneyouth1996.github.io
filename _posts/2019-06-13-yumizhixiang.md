@@ -5,6 +5,7 @@ priority: 440000
 title: “鱼米之乡”
 tags: [food]
 excerpt: food
+img: yumizhixiang.png
 date: 2019-06-13 12:00:00
 ---
 
