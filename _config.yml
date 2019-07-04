@@ -31,7 +31,7 @@ pinterest: # Add your Pinterest handle
 mailchimp: # Add your MailChimp form identifier.
 
 # Disqus
-discus_identifier: Yong Huang # Add your discus identifier
+discus_identifier: yonglhuang-com # Add your discus identifier
 
 mathjax:   true
 
