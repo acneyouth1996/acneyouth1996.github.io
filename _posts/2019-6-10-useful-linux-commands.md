@@ -5,6 +5,7 @@ mathjax: true
 priority: 440000
 title: “Useful Linux commands”
 tags: [linux]
+img: linux.jpg
 date: 2019-06-10 12:00:00
 ---
 
