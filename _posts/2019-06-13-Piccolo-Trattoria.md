@@ -5,7 +5,7 @@ priority: 440000
 title: “Piccolo Trattoria Italian Restaurant”
 tags: [food]
 excerpt: food
-img: pasta.png
+img: food.png
 date: 2019-06-13 12:00:00
 ---
 
