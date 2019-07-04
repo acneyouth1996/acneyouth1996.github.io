@@ -5,7 +5,7 @@ priority: 440000
 title: “麻辣东村”
 tags: [food]
 excerpt: food
-img: food.jpg
+img: maladongcun.png
 date: 2019-06-13 12:00:00
 ---
 

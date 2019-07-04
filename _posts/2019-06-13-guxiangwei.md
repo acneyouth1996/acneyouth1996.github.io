@@ -5,7 +5,7 @@ priority: 440000
 title: “Grand Sichuan Eastern”
 tags: [food]
 excerpt: food
-img: guxiangwei.jpg
+img: guxiangwei.png
 date: 2019-06-13 12:00:00
 ---
 
