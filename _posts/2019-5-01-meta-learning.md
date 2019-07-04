@@ -5,6 +5,7 @@ mathjax: true
 priority: 440000
 title: “Meta Learning --- Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks”
 tags: [Machine Learning]
+img: meta.png
 excerpt: Machine Learning
 date: 2019-05-01 12:00:00
 ---
