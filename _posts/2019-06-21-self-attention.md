@@ -6,7 +6,7 @@ priority: 440000
 title: “Self attetion”
 tags: [NLP]
 excerpt: NLP
-img: selfatt.png
+img: nlp.png
 date: 2019-06-21 12:00:00
 ---
 
