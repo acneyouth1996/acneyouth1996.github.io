@@ -6,6 +6,7 @@ priority: 440000
 title: “Feature Detection”
 tags: [Computer Vision]
 excerpt: Computer Vision
+img : fd.png
 date: 2019-05-01 12:00:00
 ---
 ## Key idea
