@@ -24,6 +24,7 @@ date: 2019-06-10 12:00:00
 2. download files from cloud machine to local machine **scp username@cloud_ip:[cloud dir] [local_dir]**
 3. upload for aws: **scp -i [path to keyfile] [local dir] username@cloud_ip:[cloud dir]**
 4. download for aws: **scp -i [path to keyfile]username@cloud_ip:[cloud dir] [local_dir]**
+5. Copy/Sync Files and Directory to or From a Server : **rsync -avz exampledir/ root@ip:/home/**
 
 
 ### Part 3: check info of files and directory
@@ -44,6 +45,8 @@ date: 2019-06-10 12:00:00
 ### Part 5: using git
 1. add all: git add *
 2. undo add all: **git reset**
+
+
 ### Part 6: tensorboard 
 1.  **tensorboard --logdir='./logs' --port=6006**
 
@@ -51,3 +54,8 @@ date: 2019-06-10 12:00:00
 ### Part 7: check cpu info
 1. show cpu architecture info: **lscpu**
 2. check how many cores: **echo "Threads/core: $(nproc --all)"**
+
+
+### Part 8: runnning command in Backstage
+1. log system print info to log file: **nohup python3 example.py > cmd.log &**
+
