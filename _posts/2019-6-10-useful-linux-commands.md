@@ -32,7 +32,7 @@ date: 2019-06-10 12:00:00
 3. check file/dir size: 
    1. check dir size: **du -sh [path to dir]**
    2. check file size: **du -h [path to file]**
-4. count file in dir and its subdir : find . -type f | wc -l
+4. count file in dir and its subdir : **find . -type f $$\mid$$ wc -l**
 5. check how much space left on disk: **df -h**
 
 
