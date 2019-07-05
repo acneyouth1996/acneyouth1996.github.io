@@ -40,7 +40,7 @@ mathjax:   true
 analytics: UA-139551113-1
 
 # Paginate
-paginate: 10
+paginate: 6
 paginate_path: /page:num/
 
 # Build settings
