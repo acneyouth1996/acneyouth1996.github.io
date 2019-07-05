@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: post
 comments: true
 priority: 440000
@@ -25,4 +25,4 @@ Fight Club
 彩蛋挺多的，里面有些台词蛮有意思的。
 
 
-
+ -->
