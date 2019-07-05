@@ -59,3 +59,8 @@ date: 2019-06-10 12:00:00
 ### Part 8: runnning command in Backstage
 1. log system print info to log file: **nohup python3 example.py > cmd.log &**
 
+
+### Part 9: Maven
+1. compile java project: **mvn compile**
+2. run java file: **mvn exec:java -Dexec.mainClass="exampleClass"**
+
