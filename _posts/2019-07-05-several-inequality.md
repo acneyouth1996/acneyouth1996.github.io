@@ -23,4 +23,10 @@ $$
 \forall a \geq 0, \quad \mathbb{E}[Z] \geq \int_{x=0}^{a} \mathbb{P}[Z \geq x] d x \geq \int_{x=0}^{a} \mathbb{P}[Z \geq a] d x=a \mathbb{P}[Z \geq a]
 $$
 
+Rearranging the inequality yields Markov’s inequality:
+
+$$
+\forall a \geq 0, \quad \mathbb{P}[Z \geq a] \leq \frac{\mathbb{E}[Z]}{a}
+$$
+
 
