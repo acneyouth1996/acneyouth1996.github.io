@@ -3,7 +3,7 @@ layout: post
 comments: true
 mathjax: true
 priority: 440000
-title: “Self attetion”
+title: “Several Inequality”
 tags: [math]
 excerpt: math
 img: math.png
