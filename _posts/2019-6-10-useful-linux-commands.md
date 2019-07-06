@@ -36,6 +36,7 @@ date: 2019-06-10 12:00:00
    2. check file size: **du -h [path to file]**
 4. count file in dir and its subdir : **find . -type f $$\mid$$ wc -l**
 5. check how much space left on disk: **df -h**
+6. check file detailed info of a file : **stat file**
 
 
 ### Part 4: vim for editting codes:
