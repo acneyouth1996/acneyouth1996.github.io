@@ -78,7 +78,7 @@ The deviation between the empirical average and the mean given previously decrea
 ## Hoeffding’s Inequality
 
 Let $$Z_{1}, \ldots, Z_{m}$$ be a sequence of i.i.d. random variables and let $$ \overline{Z}=\frac{1}{m} \sum_{i=1}^{m} Z_{i}
-$$ Assume that $$
+$$ Assume that $$ 
 \mathbb{E}[\overline{Z}]=\mu
 $$ and $$
 \mathbb{P}[a \leq Z_{i} \leq b ]=1
@@ -87,6 +87,21 @@ $$  for every $$i$$. Then, for any $$
 $$, 
 $$
 \mathbb{P}\left[\left|\frac{1}{m} \sum_{i=1}^{m} Z_{i}-\mu\right|>\epsilon\right] \leq 2 \exp \left(-2 m \epsilon^{2} /(b-a)^{2}\right)
+$$
+
+Proof: Denote $$
+X_{i}=Z_{i}-\mathbb{E}\left[Z_{i}\right]
+$$ and $$
+\overline{X}=\frac{1}{m} \sum_{i} X_{i}
+$$ Using the monotonicity of the exponent function and Markov’s inequality, we have that for every 
+$$\lambda>0$$, $$\epsilon>0$$, 
+$$
+\mathbb{P}[\overline{X} \geq \epsilon]=\mathbb{P}\left[e^{\lambda \overline{X}} \geq e^{\lambda \epsilon}\right] \leq e^{-\lambda \epsilon} \mathbb{E}\left[e^{\lambda \overline{X}}\right]
+$$
+
+Using the independence assumption we also have 
+$$
+\mathbb{E}\left[e^{\lambda \overline{X}}\right]=\mathbb{E}\left[\prod_{i} e^{\lambda X_{i} / m}\right]=\prod_{i} \mathbb{E}\left[e^{\lambda X_{i} / m}\right]
 $$
 
 
