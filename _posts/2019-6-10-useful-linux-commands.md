@@ -64,5 +64,5 @@ date: 2019-06-10 12:00:00
 
 ### Part 9: Maven
 1. compile java project: **mvn compile**
-2. run java file: **mvn exec:java -Dexec.mainClass="exampleClass"**
+2. run java file: **mvn exec:java -Dexec.mainClass="lucene.search.Mutation""**
 

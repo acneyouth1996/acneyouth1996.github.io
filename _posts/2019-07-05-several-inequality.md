@@ -46,5 +46,34 @@ $$
 
 Applying Markov’s inequality on the random variable $$(Z-\mathbb{E}[Z])^{2}$$ we obtain Chebyshev’s inequality:
 
+$$
+\forall a>0, \quad \mathbb{P}[|Z-\mathbb{E}[Z]| \geq a]=\mathbb{P}\left[(Z-\mathbb{E}[Z])^{2} \geq a^{2}\right] \leq \frac{\operatorname{Var}[Z]}{a^{2}}
+$$
+
+where $$\operatorname{Var}[Z]=\mathbb{E}\left[(Z-\mathbb{E}[Z])^{2}\right]$$ is the variance of $$Z$$.
+
+Consider the random variable $$\frac{1}{m} \sum_{i=1}^{m} Z_{i}$$ . Since $$Z_{1}, \ldots, Z_{m}$$ are i.i.d. it is easy to verify that
+
+$$
+\operatorname{Var}\left[\frac{1}{m} \sum_{i=1}^{m} Z_{i}\right]=\frac{\operatorname{Var}\left[Z_{1}\right]}{m}
+$$
+
+Applying Chebyshev’s inequality, we obtain the following:
+
+1. LEMMA 2: Let $$Z_{1}, \ldots, Z_{m}$$ be a sequence of i.i.d. random variables and assume that $$\mathbb{E}\left[Z{1}\right]=\mu
+$$ and $$
+\operatorname{Var}\left[Z_{1}\right] \leq 1
+$$. Then, for any $$
+\delta \in(0,1)
+$$, with probability of at least $$
+1-\delta
+$$ we have
+
+$$
+\left|\frac{1}{m} \sum_{i=1}^{m} Z_{i}-\mu\right| \leq \sqrt{\frac{1}{\delta m}}
+$$
+
+The deviation between the empirical average and the mean given previously decreases polynomially with m. It is possible to obtain a significantly faster decrease. In the sections that follow we derive bounds that decrease exponentially fast.
+
 
 
