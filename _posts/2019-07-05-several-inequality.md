@@ -105,4 +105,64 @@ $$
 $$
 
 
+By Hoeffding’s lemma , later we will see, for every i we have
+
+$$
+\mathbb{E}\left[e^{\lambda X_{i} / m}\right] \leq e^{\frac{\lambda^{2}(b-a)^{2}}{8 m^{2}}}
+$$
+
+Therefore, $$
+\mathbb{P}[\overline{X} \geq \epsilon] \leq e^{-\lambda \epsilon} \prod_{i} e^{\frac{\lambda^{2}(b-a)^{2}}{8 m^{2}}}=e^{-\lambda \epsilon+\frac{\lambda^{2}(b-a)^{2}}{8 m}}
+$$ 
+setting $$
+\lambda=4 m \epsilon /(b-a)^{2}
+$$ we obtain $$
+\mathbb{P}[\overline{X} \geq \epsilon] \leq e^{-\frac{2 m \epsilon^{2}}{(b-a)^{2}}}
+$$
+
+## LEMMA 3: (Hoeffding’s lemma) 
+Let $$X$$ be a random variable that takes values
+in the interval [a, b] and such that $$
+\mathbb{E}[X]=0
+$$. Then, for every $$
+\lambda>0
+$$, $$
+\mathbb{E}\left[e^{\lambda X}\right] \leq e^{\frac{\lambda^{2}(b-a)^{2}}{8}}
+$$
+
+$$
+f(x) \leq \alpha f(a)+(1-\alpha) f(b)
+$$
+Setting $$
+\alpha=\frac{b-x}{b-a} \in[0,1]
+$$ yields
+
+$$
+e^{\lambda x} \leq \frac{b-x}{b-a} e^{\lambda a}+\frac{x-a}{b-a} e^{\lambda b}
+$$
+
+Taking the expectation, we obtain that
+$$
+\mathbb{E}\left[e^{\lambda X}\right] \leq \frac{b-\mathbb{E}[X]}{b-a} e^{\lambda a}+\frac{\mathbb{E}[x]-a}{b-a} e^{\lambda b}=\frac{b}{b-a} e^{\lambda a}-\frac{a}{b-a} e^{\lambda b}
+$$
+
+where we used the fact that $$
+\mathbb{E}[X]=0
+$$ Denote $$
+h=\lambda(b-a), p=\frac{-a}{b-a}
+$$ and $$
+L(h)=-h p+\log \left(1-p+p e^{h}\right)
+$$ Then, the expression on the right-hand side of
+the above can be rewritten as $$
+e^{L(h)}
+$$ Therefore, to conclude our proof it suffices to show that $$
+L(h) \leq \frac{h^{2}}{8}
+$$ This follows from Taylor’s theorem using the facts:
+8 $$
+L(0)=L^{\prime}(0)=0
+$$ and $$
+L^{\prime \prime}(h) \leq 1 / 4
+$$ for all $$h$$
+
+
 
