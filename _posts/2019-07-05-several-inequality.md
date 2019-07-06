@@ -120,7 +120,7 @@ $$ we obtain $$
 \mathbb{P}[\overline{X} \geq \epsilon] \leq e^{-\frac{2 m \epsilon^{2}}{(b-a)^{2}}}
 $$
 
-## LEMMA 3: (Hoeffding’s lemma) 
+1. LEMMA 3: (Hoeffding’s lemma) 
 Let $$X$$ be a random variable that takes values
 in the interval [a, b] and such that $$
 \mathbb{E}[X]=0
