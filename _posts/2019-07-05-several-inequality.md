@@ -29,4 +29,22 @@ $$
 \forall a \geq 0, \quad \mathbb{P}[Z \geq a] \leq \frac{\mathbb{E}[Z]}{a}
 $$
 
+1. LEMMMA1: Let $$$$ be a random variable that takes values in [0, 1]. Assume that $$
+\mathbb{E}[Z]=\mu
+$$ Then, for any $$a \in(0,1) $$,
+
+$$
+\mathbb{P}[Z>1-a] \geq \frac{\mu-(1-a)}{a}
+$$
+
+This also implies that for every $$a \in(0,1) $$,
+$$
+\mathbb{P}[Z>a] \geq \frac{\mu-a}{1-a} \geq \mu-a
+$$
+
+## Chebyshev’s Inequality
+
+Applying Markov’s inequality on the random variable $$(Z-\mathbb{E}[Z])^{2}$$ we obtain Chebyshev’s inequality:
+
+
 
