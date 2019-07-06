@@ -13,3 +13,14 @@ date: 2019-07-05 12:00:00
 ## Markov’s Inequality
 We start with an inequality which is called Markov’s inequality. Let $$Z$$ be a nonnegative random variable. The expectation of $$Z$$ can be written as follows:
 
+$$
+\mathbb{E}[Z]=\int_{x=0}^{\infty} \mathbb{P}[Z \geq x] d x
+$$
+
+Since $$\mathbb{P}[Z \geq x$$ is monotonically nonincreasing we obtain
+
+$$
+\forall a \geq 0, \quad \mathbb{E}[Z] \geq \int_{x=0}^{a} \mathbb{P}[Z \geq x] d x \geq \int_{x=0}^{a} \mathbb{P}[Z \geq a] d x=a \mathbb{P}[Z \geq a]
+$$
+
+
