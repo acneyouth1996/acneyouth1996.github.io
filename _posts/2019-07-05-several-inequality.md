@@ -75,5 +75,19 @@ $$
 
 The deviation between the empirical average and the mean given previously decreases polynomially with m. It is possible to obtain a significantly faster decrease. In the sections that follow we derive bounds that decrease exponentially fast.
 
+## Hoeffding’s Inequality
+
+Let $$Z_{1}, \ldots, Z_{m}$$ be a sequence of i.i.d. random variables and let $$ \overline{Z}=\frac{1}{m} \sum_{i=1}^{m} Z_{i}
+$$ Assume that $$
+\mathbb{E}[\overline{Z}]=\mu
+$$ and $$
+\mathbb{P}[a \leq Z_{i} \leq b ]=1
+$$  for every $$i$$. Then, for any $$
+\epsilon>0
+$$, 
+$$
+\mathbb{P}\left[\left|\frac{1}{m} \sum_{i=1}^{m} Z_{i}-\mu\right|>\epsilon\right] \leq 2 \exp \left(-2 m \epsilon^{2} /(b-a)^{2}\right)
+$$
+
 
 
