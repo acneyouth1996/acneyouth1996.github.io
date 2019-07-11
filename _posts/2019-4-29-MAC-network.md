@@ -143,9 +143,8 @@ The intuition of this model is from the classic computer architecture design, wh
     * The output unit: The output unit predicts the final answer to the question based on the question representation q and the final memory mp, which represents the final intermediate result of the reasoning process, holding relevant information from the knowledge base
 
 ## Results
-The results can be found in authors paper, I won't discuss it in detail, I trained on NLVR using raw image feature as well as image feature extracted by Resnet, using resnet, validation ACC reached 0.55 and 0.53 using raw image. I think the author has similar results on NLVR as well. The reason for the problem behind this is that the amount of data is not adequate.
-## Conclusion
-This semester I worked on VQA problems under the supervision of Prof.Yoav, This is by far the most interesting part of the work. In terms of good results from this semester's experiments and publications, not too much or not at all, but in terms of personal growth, I learned quite a lot, combining with what I learned from the NLP course, The biggest take away is How to do research and tackle problems in a systematic way.  
+The results can be found in authors paper, I trained on NLVR using raw image feature as well as image feature extracted by Resnet, using resnet, validation ACC reached 0.55 and 0.53 using raw image. I think the author has similar results on NLVR as well. The reason for the problem behind this is that the amount of data is not adequate.
+
 
 
 
