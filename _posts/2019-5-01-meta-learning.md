@@ -67,8 +67,6 @@ $$
 <img src="https://user-images.githubusercontent.com/22668421/57094595-eb6f7300-6cde-11e9-9352-5b42a7eb480c.png" style="border:none;width:100%">
 </div>
 
-## Conclusion
-The key idea behind this paper is to use gradient descent twice, one on task level, one on error of the specific task.
 
 
 
