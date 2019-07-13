@@ -20,16 +20,31 @@
 >
 </script>
 <script>
-  function changeSize(button) {
-    var myeqn = document.getElementById('myeqn');
-    myeqn.style.fontSize = button.textContent;
-    MathJax.Hub.Queue(
-    ['Rerender', MathJax.Hub, 'myeqn'],
-
-    function () {
-        document.getElementById('mylabel').innerHTML =
-            'width: ' + myeqn.offsetWidth + ", height: " + myeqn.offsetHeight;
+  // resize all LaTeX Display elements to they fit in on screen
+function cvonk_ResizeMathJax() {
+    jQuery('.MathJax_Display').each(function(ii, obj) {
+        var latex = obj.children[0];
+        var w = latex.offsetWidth;
+        var h = latex.offsetHeight;    
+        var W = obj.offsetWidth;
+        if (w > W) {
+            obj.style.fontSize = 95 * W / w + "%";
+        }
     });
 }
+window.MathJax = {
+    AuthorInit: function() {
+    MathJax.Hub.Register.StartupHook("Begin", function() {
+        MathJax.Hub.Queue(function() {
+        cvonk_ResizeMathJax();
+        });
+    });
+    },
+    jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+    extensions: ["tex2jax.js"]
+};
+window.addEventListener("resize", function() {
+    cvonk_ResizeMathJax();  
+});
 </script>
 {% endif %}
