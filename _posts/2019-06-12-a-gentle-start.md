@@ -200,14 +200,3 @@ $$) approximately (up to an error of $$\delta$$) correct.
 
 
  
-function changeSize(button) {
-    var myeqn = document.getElementById('myeqn');
-    myeqn.style.fontSize = button.textContent;
-    MathJax.Hub.Queue(
-    ['Rerender', MathJax.Hub, 'myeqn'],
-
-    function () {
-        document.getElementById('mylabel').innerHTML =
-            'width: ' + myeqn.offsetWidth + ", height: " + myeqn.offsetHeight;
-    });
-}
