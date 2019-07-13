@@ -19,4 +19,17 @@
   src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
 >
 </script>
+<script>
+  function changeSize(button) {
+    var myeqn = document.getElementById('myeqn');
+    myeqn.style.fontSize = button.textContent;
+    MathJax.Hub.Queue(
+    ['Rerender', MathJax.Hub, 'myeqn'],
+
+    function () {
+        document.getElementById('mylabel').innerHTML =
+            'width: ' + myeqn.offsetWidth + ", height: " + myeqn.offsetHeight;
+    });
+}
+</script>
 {% endif %}
