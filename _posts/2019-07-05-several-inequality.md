@@ -4,7 +4,7 @@ comments: true
 mathjax: true
 priority: 440000
 title: “Several Inequality”
-tags: [math]
+tags: [math & stats]
 excerpt: math
 img: math.png
 date: 2019-07-05 12:00:00
