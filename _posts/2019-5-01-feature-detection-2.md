@@ -5,7 +5,7 @@ mathjax: true
 priority: 440000
 title: “Feature detection 2”
 tags: [Computer Vision]
-img: nyc.jpeg
+img: manhattan.jpeg
 excerpt: Computer Vision
 date: 2019-05-01 12:00:00
 ---
