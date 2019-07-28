@@ -6,7 +6,7 @@ priority: 440000
 title: “Several Inequality”
 tags: [math & stats]
 excerpt: math
-img: math.png
+img: nyc.jpeg
 date: 2019-07-05 12:00:00
 ---
 

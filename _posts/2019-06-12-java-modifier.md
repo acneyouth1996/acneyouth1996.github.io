@@ -5,7 +5,7 @@ priority: 440000
 title: “Java Modifier”
 tags: [programming language]
 excerpt: programming language
-img: programming.jpg
+img: nyc.jpeg
 date: 2019-06-12 12:00:00
 ---
 

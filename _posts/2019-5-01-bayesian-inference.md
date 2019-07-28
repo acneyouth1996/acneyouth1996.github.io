@@ -6,7 +6,7 @@ priority: 440000
 title: “Bayesian Inference”
 tags: [Machine Learning]
 excerpt: Machine Learning
-img: ml.png
+img: nyc.jpeg
 date: 2019-05-01 12:00:00
 ---
 ## Bayesian Stats and Frequentist

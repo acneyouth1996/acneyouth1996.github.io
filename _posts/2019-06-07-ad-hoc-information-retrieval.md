@@ -6,7 +6,7 @@ priority: 440000
 title: “Introduction to ad-hoc information retrieval”
 tags: [information retrieval]
 excerpt: information retrieval
-img: ir.png
+img: nyc.jpeg
 date: 2019-06-07 12:00:00
 ---
 
