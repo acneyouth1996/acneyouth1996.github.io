@@ -26,6 +26,7 @@ date: 2019-06-10 12:00:00
 4. download for aws: **scp -i [path to keyfile]username@cloud_ip:[cloud dir] [local_dir]**
 5. Copy/Sync Files and Directory to or From a Server : **rsync -avz exampledir/ root@ip:/home/**
 6. change permission of certain file: **chmod -R ugo+rw file** 
+7. Using rsync to transfer file from local to remote: **rsync -rave "ssh -i PEMKEYFILE.pem" /path/to/local/files/* ec2-user@EC2_INSTANCE_HOSTNAME:/path/to/remote/files**
 
 
 ### Part 3: check info of files and directory
