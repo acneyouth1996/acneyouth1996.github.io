@@ -38,7 +38,9 @@ All of these models are distance metric based networks.
 <div class="imgcap">
 <img src="https://user-images.githubusercontent.com/22668421/62896497-2ee66e00-bd1f-11e9-8f7f-ebd5544f4fc7.png" style="border:none;width:100%">
 </div>
-Siamese network is used for one-shot learning, The basic idea of siamese network is to compare the similarity between the query image feature vector and the labeled image feature vector after the image passing through several convolutional layers. and then after the distance is calculated, a sigmoid function is used to make the final prediction to tell us if the pair is a match or not. The loss function could be cross entropy(in the original paper) or some other fancier loss function such as Contrastive Loss function.
+Siamese network is used for one-shot learning, The basic idea of siamese network is to compare the similarity between the query image feature vector and the labeled image feature vector after the image pair passing through several convolutional layers. After the distance is calculated, a sigmoid function is used to make the final prediction to tell us if the pair is a match or not. The loss function could be cross entropy(in the original paper) or some other fancier loss function such as Contrastive Loss function.
+
+
 ## Matching network
 
 ## Protonetwork
