@@ -42,8 +42,20 @@ Siamese network is used for one-shot learning, The basic idea of siamese network
 
 
 ## Matching network
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/62897573-90a7d780-bd21-11e9-8757-2c1b2a3ba670.png" style="border:none;width:50%">
+</div>
 
-## Protonetwork
+Matching network is very similar to siamese network, The major diffrence is that it applies attetion mechanism. The model in its simplest form computes $$\hat{y}$$ as follows
+$$
+\hat{y}=\sum_{i=1}^{k} a\left(\hat{x}, x_{i}\right) y_{i}
+$$
+where $$x_{i}, y_{i}$$ are the samples and labels from the support set $$
+S=\left\{\left(x_{i}, y_{i}\right)\right\}_{i=1}^{k}
+$$, and $$a$$ is an attention mechanism, the attetion used here is the softmax over the cosine distance.
+
+## Prototypical Networks
+Prototypical Networks are somehow very similar to matching network
 
 ## Relation-network
 
