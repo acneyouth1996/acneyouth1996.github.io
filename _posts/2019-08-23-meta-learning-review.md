@@ -95,6 +95,48 @@ The [Siamese Neural Network](https://papers.nips.cc/paper/769-signature-verifica
 3. The distance is converted to a probability $$p$$ by a linear feedforward layer and sigmoid. It is the probability of whether two images are drawn from the same class.
 4. Intuitively the loss is cross entropy because the label is binary.
 
+$$
+\begin{aligned}
+p(\mathbf{x}_i, \mathbf{x}_j) &= \sigma(\mathbf{W}\vert f_\theta(\mathbf{x}_i) - f_\theta(\mathbf{x}_j) \vert) \\
+\mathcal{L}(B) &= \sum_{(\mathbf{x}_i, \mathbf{x}_j, y_i, y_j)\in B} \mathbf{1}_{y_i=y_j}\log p(\mathbf{x}_i, \mathbf{x}_j) + (1-\mathbf{1}_{y_i=y_j})\log (1-p(\mathbf{x}_i, \mathbf{x}_j))
+\end{aligned}
+$$
+
+
+Images in the training batch $$B$$ can be augmented with distortion. Of course, you can replace the L1 distance with other distance metric, L2, cosine, etc. Just make sure they are differential and then everything else works the same.
+
+Given a support set $$S$$ and a test image $$\mathbf{x}$$, the final predicted class is:
+
+$$
+\hat{c}_S(\mathbf{x}) = c(\arg\max_{\mathbf{x}_i \in S} P(\mathbf{x}, \mathbf{x}_i))
+$$
+
+where $$c(\mathbf{x})$$ is the class label of an image $$\mathbf{x}$$ and $$\hat{c}(.)$$ is the predicted label.
+
+The assumption is that the learned embedding can be generalized to be useful for measuring the distance between images of unknown categories. This is the same assumption behind transfer learning via the adoption of a pre-trained model; for example, the convolutional features learned in the model pre-trained with ImageNet are expected to help other image tasks. However, the benefit of a pre-trained model decreases when the new task diverges from the original task that the model was trained on.
+
+
+### Matching Networks
+
+The task of **Matching Networks** ([Vinyals et al., 2016](http://papers.nips.cc/paper/6385-matching-networks-for-one-shot-learning.pdf)) is to learn a classifier $$c_S$$ for any given (small) support set $$S=\{x_i, y_i\}_{i=1}^k$$ (*k-shot* classification). This classifier defines a probability distribution over output labels $$y$$ given a test example $$\mathbf{x}$$. Similar to other metric-based models, the classifier output is defined as a sum of labels of support samples weighted by attention kernel $$a(\mathbf{x}, \mathbf{x}_i)$$ - which should be proportional to the similarity between $$\mathbf{x}$$ and $$\mathbf{x}_i$$.
+
+
+
+
+$$
+c_S(\mathbf{x}) = P(y \vert \mathbf{x}, S) = \sum_{i=1}^k a(\mathbf{x}, \mathbf{x}_i) y_i
+\text{, where }S=\{(\mathbf{x}_i, y_i)\}_{i=1}^k
+$$
+
+The attention kernel depends on two embedding functions, $$f$$ and $$g$$, for encoding the test sample and the support set samples respectively. The attention weight between two data points is the cosine similarity, $$\text{cosine}(.)$$, between their embedding vectors, normalized by softmax:
+
+$$
+a(\mathbf{x}, \mathbf{x}_i) = \frac{\exp(\text{cosine}(f(\mathbf{x}), g(\mathbf{x}_i))}{\sum_{j=1}^k\exp(\text{cosine}(f(\mathbf{x}), g(\mathbf{x}_j))}
+$$
+
+
+
+
 
 
 
