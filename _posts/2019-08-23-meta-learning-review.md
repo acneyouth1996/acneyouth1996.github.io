@@ -3,7 +3,7 @@ layout: post
 comments: true
 mathjax: true
 priority: 440000
-title: "Meta-Learning: Learning to Learn Fast"
+title: "Meta-Learning: Metric-Based Approaches"
 tags: [Machine Learning]
 excerpt: Machine Learning
 img: ri.jpg
@@ -34,6 +34,10 @@ $$
 
 *Few-shot classification* is an instantiation of meta-learning in the field of supervised learning. The dataset $$\mathcal{D}$$ is often split into two parts, a support set $$S$$ for learning and a prediction set $$B$$ for training or testing, $$\mathcal{D}=\langle S, B\rangle$$. Often we consider a *K-shot N-class classification* task: the support set contains K labelled examples for each of N classes.
 
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/63630387-1d874680-c5e8-11e9-8fa3-4440ecd11bb7.png" style="border:none;width:50%">
+</div>
+
 
 ### Learner and Meta-Learner
 
@@ -61,7 +65,7 @@ There are three common approaches to meta-learning: metric-based, model-based, a
 
 (*) $$k_\theta$$ is a kernel function measuring the similarity between $$\mathbf{x}_i$$ and $$\mathbf{x}$$.
 
-Next we are gonna review classic models in each approach.
+In this post we are gonna review classic models specificlly for metric-based methods.
 
 ## Metric-Based
 
@@ -82,6 +86,10 @@ All the models introduced below learn embedding vectors of input data explicitly
 The [Siamese Neural Network](https://papers.nips.cc/paper/769-signature-verification-using-a-siamese-time-delay-neural-network.pdf) is composed of two twin networks and their outputs are jointly trained on top with a function to learn the relationship between pairs of input data samples. The twin networks are identical, sharing the same weights and network parameters. In other words, both refer to the same embedding network that learns an efficient embedding to reveal relationship between pairs of data points.
 
 [Koch, Zemel & Salakhutdinov (2015)](http://www.cs.toronto.edu/~rsalakhu/papers/oneshot1.pdf) proposed a method to use the siamese neural network to do one-shot image classification. First, the siamese network is trained for a verification task for telling whether two input images are in the same class. It outputs the probability of two images belonging to the same class. Then, during test time, the siamese network processes all the image pairs between a test image and every image in the support set. The final prediction is the class of the support image with the highest probability.
+
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/63630408-4a3b5e00-c5e8-11e9-9408-56a16af8a8a7.png" style="border:none;width:50%">
+</div>
 
 
 1. First, convolutional siamese network learns to encode two images into feature vectors via a embedding function $$f_\theta$$ which contains a couple of convolutional layers. 
@@ -114,6 +122,10 @@ The assumption is that the learned embedding can be generalized to be useful for
 
 The task of **Matching Networks** ([Vinyals et al., 2016](http://papers.nips.cc/paper/6385-matching-networks-for-one-shot-learning.pdf)) is to learn a classifier $$c_S$$ for any given (small) support set $$S=\{x_i, y_i\}_{i=1}^k$$ (*k-shot* classification). This classifier defines a probability distribution over output labels $$y$$ given a test example $$\mathbf{x}$$. Similar to other metric-based models, the classifier output is defined as a sum of labels of support samples weighted by attention kernel $$a(\mathbf{x}, \mathbf{x}_i)$$ - which should be proportional to the similarity between $$\mathbf{x}$$ and $$\mathbf{x}_i$$.
 
+
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/63630425-6fc86780-c5e8-11e9-9173-a9bcd8f994c8.png" style="border:none;width:50%">
+</div>
 
 
 
@@ -168,6 +180,10 @@ $$
 1. The relationship is not captured by a simple L1 distance in the feature space, but predicted by a CNN classifier $$g_\phi$$. The relation score between a pair of inputs, $$\mathbf{x}_i$$ and $$\mathbf{x}_j$$, is $$r_{ij} = g_\phi([\mathbf{x}_i, \mathbf{x}_j])$$ where $$[.,.]$$ is concatenation.
 2. The objective function is MSE loss instead of cross-entropy, because conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification, $$\mathcal{L}(B) = \sum_{(\mathbf{x}_i, \mathbf{x}_j, y_i, y_j)\in B} (r_{ij} - \mathbf{1}_{y_i=y_j})^2$$.
 
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/63630432-8bcc0900-c5e8-11e9-8a18-f79c58cfa8ee.png" style="border:none;width:50%">
+</div>
+
 
 
 ### Prototypical Networks
@@ -178,7 +194,9 @@ $$
 \mathbf{v}_c = \frac{1}{|S_c|} \sum_{(\mathbf{x}_i, y_i) \in S_c} f_\theta(\mathbf{x}_i)
 $$
 
-
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/63630442-a7371400-c5e8-11e9-9090-bb8292dda399.png" style="border:none;width:50%">
+</div>
 
 
 The distribution over classes for a given test input $$\mathbf{x}$$ is a softmax over the inverse of distances between the test data embedding and prototype vectors.
@@ -193,79 +211,3 @@ The loss function is the negative log-likelihood: $$\mathcal{L}(\theta) = -\log 
 
 
 
-## Model-Based
-
-Model-based meta-learning approaches depends on a model designed specifically for fast learning : a model that updates its parameters rapidly with a few training steps. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model. 
-
-
-### Memory-Augmented Neural Networks
-
-A family of model architectures use external memory storage to facilitate the learning process of neural networks, including [Neural Turing Machines] and [Memory Networks](https://arxiv.org/abs/1410.3916). With an explicit storage buffer, it is easier for the network to rapidly incorporate new information and not to forget in the future. Such a model is known as **MANN**, short for "**Memory-Augmented Neural Network**".  
-
-Because MANN is expected to encode new information fast and thus to adapt to new tasks after only a few samples, it fits well for meta-learning. Taking the Neural Turing Machine (NTM) as the base model, [Santoro et al. (2016)](http://proceedings.mlr.press/v48/santoro16.pdf) proposed a set of modifications on the training setup and the memory retrieval mechanisms (or "addressing mechanisms", deciding how to assign attention weights to memory vectors). 
-
-As a quick recap, NTM couples a controller neural network with external memory storage. The controller learns to read and write memory rows by soft attention, while the memory serves as a knowledge repository. The attention weights are generated by its addressing mechanism: content-based + location based.
-
-
-#### MANN for Meta-Learning
-
-To use MANN for meta-learning tasks, we need to train it in a way that the memory can encode and capture information of new tasks fast and, in the meantime, any stored representation is easily and stably accessible.
-
-The training described in [Santoro et al., 2016](http://proceedings.mlr.press/v48/santoro16.pdf) happens in an interesting way so that the memory is forced to hold information for longer until the appropriate labels are presented later. In each training episode, the truth label $$y_t$$ is presented with **one step offset**, $$(\mathbf{x}_{t+1}, y_t)$$: it is the true label for the input at the previous time step t, but presented as part of the input at time step t+1. 
-
-
-
-In this way, MANN is motivated to memorize the information of a new dataset, because the memory has to hold the current input until the label is present later and then retrieve the old information to make a prediction accordingly.
-
-Next let us see how the memory is updated for efficient information retrieval and storage.
-
-
-#### Addressing Mechanism for Meta-Learning
-
-Aside from the training process, a new pure content-based addressing mechanism is utilized to make the model better suitable for meta-learning.
-
-
-**>> How to read from memory?**
-<br/>
-The read attention is constructed purely based on the content similarity.
-
-First, a key feature vector $$\mathbf{k}_t$$ is produced at the time step t by the controller as a function of the input $$\mathbf{x}$$. Similar to NTM, a read weighting vector $$\mathbf{w}_t^r$$ of N elements is computed as the cosine similarity between the key vector and every memory vector row, normalized by softmax. The read vector $$\mathbf{r}_t$$ is a sum of memory records weighted by such weightings:
-
-$$
-\mathbf{r}_i = \sum_{i=1}^N w_t^r(i)\mathbf{M}_t(i)
-\text{, where } w_t^r(i) = \text{softmax}(\frac{\mathbf{k}_t \cdot \mathbf{M}_t(i)}{\|\mathbf{k}_t\| \cdot \|\mathbf{M}_t(i)\|})
-$$
-
-where $$M_t$$ is the memory matrix at time t and $$M_t(i)$$ is the i-th row in this matrix.
-
-
-**>> How to write into memory?**
-<br/>
-The addressing mechanism for writing newly received information into memory operates a lot like the [cache replacement](https://en.wikipedia.org/wiki/Cache_replacement_policies) policy. The **Least Recently Used Access (LRUA)** writer is designed for MANN to better work in the scenario of meta-learning. A LRUA write head prefers to write new content to either the *least used* memory location or the *most recently used* memory location.
-* Rarely used locations: so that we can preserve frequently used information (see [LFU](https://en.wikipedia.org/wiki/Least_frequently_used));
-* The last used location: the motivation is that once a piece of information is retrieved once, it probably won't be called again for a while (see [MRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#Most_recently_used_(MRU))). 
-
-There are many cache replacement algorithms and each of them could potentially replace the design here with better performance in different use cases. Furthermore, it would be a good idea to learn the memory usage pattern and addressing strategies rather than arbitrarily set it.
-
-The preference of LRUA is carried out in a way that everything is differentiable:
-1. The usage weight $$\mathbf{w}^u_t$$ at time t is a sum of current read and write vectors, in addition to the decayed last usage weight, $$\gamma \mathbf{w}^u_{t-1}$$, where $$\gamma$$ is a decay factor. 
-2. The write vector is an interpolation between the previous read weight (prefer "the last used location") and the previous least-used weight (prefer "rarely used location"). The interpolation parameter is the sigmoid of a hyperparameter $$\alpha$$.
-3. The least-used weight $$\mathbf{w}^{lu}$$ is scaled according to usage weights $$\mathbf{w}_t^u$$, in which any dimension remains at 1 if smaller than the n-th smallest element in the vector and 0 otherwise.
-
-
-$$
-\begin{aligned}
-\mathbf{w}_t^u &= \gamma \mathbf{w}_{t-1}^u + \mathbf{w}_t^r + \mathbf{w}_t^w \\
-\mathbf{w}_t^r &= \text{softmax}(\text{cosine}(\mathbf{k}_t, \mathbf{M}_t(i))) \\
-\mathbf{w}_t^w &= \sigma(\alpha)\mathbf{w}_{t-1}^r + (1-\sigma(\alpha))\mathbf{w}^{lu}_{t-1}\\
-\mathbf{w}_t^{lu} &= \mathbf{1}_{w_t^u(i) \leq m(\mathbf{w}_t^u, n)}
-\text{, where }m(\mathbf{w}_t^u, n)\text{ is the }n\text{-th smallest element in vector }\mathbf{w}_t^u\text{.}
-\end{aligned}
-$$
-
-
-Finally, after the least used memory location, indicated by $$\mathbf{w}_t^{lu}$$, is set to zero, every memory row is updated:
-
-$$
-\mathbf{M}_t(i) = \mathbf{M}_{t-1}(i) + w_t^w(i)\mathbf{k}_t, \forall i
-$$
