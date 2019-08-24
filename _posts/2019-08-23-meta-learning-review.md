@@ -169,12 +169,6 @@ $$
 2. The objective function is MSE loss instead of cross-entropy, because conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification, $$\mathcal{L}(B) = \sum_{(\mathbf{x}_i, \mathbf{x}_j, y_i, y_j)\in B} (r_{ij} - \mathbf{1}_{y_i=y_j})^2$$.
 
 
-![relation-network]({{ '/assets/images/relation-network.png' | relative_url }})
-{: style="width: 100%;" class="center"}
-*Fig. 4. Relation Network architecture for a 5-way 1-shot problem with one query example. (Image source: [original paper](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf))*
-
-(Note: There is another [Relation Network](https://deepmind.com/blog/neural-approach-relational-reasoning/) for relational reasoning, proposed by DeepMind. Don't get confused.)
-
 
 ### Prototypical Networks
 
@@ -185,9 +179,7 @@ $$
 $$
 
 
-![prototypical-networks]({{ '/assets/images/prototypical-networks.png' | relative_url }})
-{: style="width: 100%;" class="center"}
-*Fig. 5. Prototypical networks in the few-shot and zero-shot scenarios. (Image source: [original paper](http://papers.nips.cc/paper/6996-prototypical-networks-for-few-shot-learning.pdf))*
+
 
 The distribution over classes for a given test input $$\mathbf{x}$$ is a softmax over the inverse of distances between the test data embedding and prototype vectors.
 
@@ -199,9 +191,10 @@ where $$d_\varphi$$ can be any distance function as long as $$\varphi$$ is diffe
 
 The loss function is the negative log-likelihood: $$\mathcal{L}(\theta) = -\log P_\theta(y=c\vert\mathbf{x})$$.
 
+
 ## Model-Based
 
-Model-based meta-learning models make no assumption on the form of $$P_\theta(y\vert\mathbf{x})$$. Rather it depends on a model designed specifically for fast learning --- a model that updates its parameters rapidly with a few training steps. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model. 
+Model-based meta-learning models make no assumption on the form of $$P_\theta(y\vert\mathbf{x})$$. Rather it depends on a model designed specifically for fast learning : a model that updates its parameters rapidly with a few training steps. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model. 
 
 
 ### Memory-Augmented Neural Networks
