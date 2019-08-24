@@ -10,7 +10,7 @@ img: ri.jpg
 date: 2019-08-26 00:00:00
 ---
 
-
+### Introducgtion
 Meta-learning, also known as "learning to learn", intends to design models that can learn new skills or adapt to new environments rapidly with a few training examples. There are three common approaches: 1) learn an efficient distance metric (metric-based); 2) use (recurrent) network with external or internal memory (model-based); 3) optimize the model parameters explicitly for fast learning (optimization-based).
 
 
@@ -43,6 +43,18 @@ It looks very similar to a normal learning task, but *one dataset* is considered
 
 *Few-shot classification* is an instantiation of meta-learning in the field of supervised learning. The dataset $$\mathcal{D}$$ is often split into two parts, a support set $$S$$ for learning and a prediction set $$B$$ for training or testing, $$\mathcal{D}=\langle S, B\rangle$$. Often we consider a *K-shot N-class classification* task: the support set contains K labelled examples for each of N classes.
 
+
+### Learner and Meta-Learner
+
+Another popular view of meta-learning decomposes the model update into two stages:
+- A classifier $$f_\theta$$ is the "learner" model, trained for operating a given task;
+- In the meantime, a optimizer $$g_\phi$$ learns how to update the learner model's parameters via the support set $$S$$, $$\theta' = g_\phi(\theta, S)$$.
+
+Then in final optimization step, we need to update both $$\theta$$ and $$\phi$$ to maximize:
+
+$$
+\mathbb{E}_{L\subset\mathcal{L}}[ \mathbb{E}_{S^L \subset\mathcal{D}, B^L \subset\mathcal{D}} [\sum_{(\mathbf{x}, y)\in B^L} P_{g_\phi(\theta, S^L)}(y \vert \mathbf{x})]]
+$$
 
 
 
