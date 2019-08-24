@@ -35,7 +35,7 @@ $$
 *Few-shot classification* is an instantiation of meta-learning in the field of supervised learning. The dataset $$\mathcal{D}$$ is often split into two parts, a support set $$S$$ for learning and a prediction set $$B$$ for training or testing, $$\mathcal{D}=\langle S, B\rangle$$. Often we consider a *K-shot N-class classification* task: the support set contains K labelled examples for each of N classes.
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/63630387-1d874680-c5e8-11e9-8fa3-4440ecd11bb7.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/63630387-1d874680-c5e8-11e9-8fa3-4440ecd11bb7.png" style="border:none;width:100%">
 </div>
 
 
@@ -88,7 +88,7 @@ The [Siamese Neural Network](https://papers.nips.cc/paper/769-signature-verifica
 [Koch, Zemel & Salakhutdinov (2015)](http://www.cs.toronto.edu/~rsalakhu/papers/oneshot1.pdf) proposed a method to use the siamese neural network to do one-shot image classification. First, the siamese network is trained for a verification task for telling whether two input images are in the same class. It outputs the probability of two images belonging to the same class. Then, during test time, the siamese network processes all the image pairs between a test image and every image in the support set. The final prediction is the class of the support image with the highest probability.
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/63630408-4a3b5e00-c5e8-11e9-9408-56a16af8a8a7.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/63630408-4a3b5e00-c5e8-11e9-9408-56a16af8a8a7.png" style="border:none;width:100%">
 </div>
 
 
@@ -124,7 +124,7 @@ The task of **Matching Networks** ([Vinyals et al., 2016](http://papers.nips.cc/
 
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/63630425-6fc86780-c5e8-11e9-9173-a9bcd8f994c8.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/63630425-6fc86780-c5e8-11e9-9173-a9bcd8f994c8.png" style="border:none;width:100%">
 </div>
 
 
@@ -181,7 +181,7 @@ $$
 2. The objective function is MSE loss instead of cross-entropy, because conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification, $$\mathcal{L}(B) = \sum_{(\mathbf{x}_i, \mathbf{x}_j, y_i, y_j)\in B} (r_{ij} - \mathbf{1}_{y_i=y_j})^2$$.
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/63630432-8bcc0900-c5e8-11e9-8a18-f79c58cfa8ee.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/63630432-8bcc0900-c5e8-11e9-8a18-f79c58cfa8ee.png" style="border:none;width:100%">
 </div>
 
 
@@ -195,7 +195,7 @@ $$
 $$
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/63630442-a7371400-c5e8-11e9-9090-bb8292dda399.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/63630442-a7371400-c5e8-11e9-9090-bb8292dda399.png" style="border:none;width:100%">
 </div>
 
 
@@ -209,5 +209,16 @@ where $$d_\varphi$$ can be any distance function as long as $$\varphi$$ is diffe
 
 The loss function is the negative log-likelihood: $$\mathcal{L}(\theta) = -\log P_\theta(y=c\vert\mathbf{x})$$.
 
+## Reference
 
+[1] Brenden M. Lake, Ruslan Salakhutdinov, and Joshua B. Tenenbaum. ["Human-level concept learning through probabilistic program induction."](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf) Science 350.6266 (2015): 1332-1338.
 
+[2] Oriol Vinyals' talk on ["Model vs Optimization Meta Learning"](http://metalearning-symposium.ml/files/vinyals.pdf)
+
+[3] Gregory Koch, Richard Zemel, and Ruslan Salakhutdinov. ["Siamese neural networks for one-shot image recognition."](http://www.cs.toronto.edu/~rsalakhu/papers/oneshot1.pdf) ICML Deep Learning Workshop. 2015.
+
+[4] Oriol Vinyals, et al. ["Matching networks for one shot learning."](http://papers.nips.cc/paper/6385-matching-networks-for-one-shot-learning.pdf) NIPS. 2016.
+
+[5] Flood Sung, et al. ["Learning to compare: Relation network for few-shot learning."](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf) CVPR. 2018.
+
+[6] Jake Snell, Kevin Swersky, and Richard Zemel. ["Prototypical Networks for Few-shot Learning."](http://papers.nips.cc/paper/6996-prototypical-networks-for-few-shot-learning.pdf) CVPR. 2018.
