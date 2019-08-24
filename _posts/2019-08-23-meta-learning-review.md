@@ -10,9 +10,8 @@ img: ri.jpg
 date: 2019-08-26 00:00:00
 ---
 
-### Introducgtion
+### Introduction
 Meta-learning, also known as "learning to learn", intends to design models that can learn new skills or adapt to new environments rapidly with a few training examples. There are three common approaches: 1) learn an efficient distance metric (metric-based); 2) use (recurrent) network with external or internal memory (model-based); 3) optimize the model parameters explicitly for fast learning (optimization-based).
-
 
 A good machine learning model often requires training with a large number of samples. Humans, in contrast, learn new concepts and skills much faster and more efficiently. Kids who have seen cats and birds only a few times can quickly tell them apart. People who know how to ride a bike are likely to discover the way to ride a motorcycle fast with little or even no demonstration. Is it possible to design a machine learning model with similar properties --- learning new concepts and skills fast with a few training examples? That's essentially what **meta-learning** aims to solve.
 
@@ -23,8 +22,6 @@ The tasks can be any well-defined family of machine learning problems: supervise
 - A classifier trained on non-cat images can tell whether a given image contains a cat after seeing a handful of cat pictures.
 - A game bot is able to quickly master a new game.
 - A mini robot completes the desired task on an uphill surface during test even through it was only trained in a flat surface environment.
-
-
 
 ## Define the Meta-Learning Problem
 
@@ -55,6 +52,26 @@ Then in final optimization step, we need to update both $$\theta$$ and $$\phi$$ 
 $$
 \mathbb{E}_{L\subset\mathcal{L}}[ \mathbb{E}_{S^L \subset\mathcal{D}, B^L \subset\mathcal{D}} [\sum_{(\mathbf{x}, y)\in B^L} P_{g_\phi(\theta, S^L)}(y \vert \mathbf{x})]]
 $$
+
+
+### Common Approaches
+
+There are three common approaches to meta-learning: metric-based, model-based, and optimization-based. Oriol Vinyals has a nice summary in his [talk](http://metalearning-symposium.ml/files/vinyals.pdf) at meta-learning symposium @ NIPS 2018:
+
+{: class="info"}
+| ------------- | ------------- | ------------- | ------------- |
+|  | Model-based | Metric-based | Optimization-based |
+| ------------- | ------------- | ------------- | ------------- |
+| **Key idea** | RNN; memory | Metric learning | Gradient descent |
+| **How $$P_\theta(y \vert \mathbf{x})$$ is modeled?** | $$f_\theta(\mathbf{x}, S)$$ | $$\sum_{(\mathbf{x}_i, y_i) \in S} k_\theta(\mathbf{x}, \mathbf{x}_i)y_i$$ (*) | $$P_{g_\phi(\theta, S^L)}(y \vert \mathbf{x})$$ |
+
+(*) $$k_\theta$$ is a kernel function measuring the similarity between $$\mathbf{x}_i$$ and $$\mathbf{x}$$.
+
+Next we are gonna review classic models in each approach.
+
+
+
+
 
 
 
