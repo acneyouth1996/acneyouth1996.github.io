@@ -17,15 +17,10 @@ A good machine learning model often requires training with a large number of sam
 
 We expect a good meta-learning model capable of well adapting or generalizing to new tasks and new environments that have never been encountered during training time. The adaptation process, essentially a mini learning session, happens during test but with a limited exposure to the new task configurations. Eventually, the adapted model can complete new tasks. This is why meta-learning is also known as [learning to learn](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf). 
 
-The tasks can be any well-defined family of machine learning problems: supervised learning, reinforcement learning, etc. For example, here are a couple concrete meta-learning tasks:
-
-- A classifier trained on non-cat images can tell whether a given image contains a cat after seeing a handful of cat pictures.
-- A game bot is able to quickly master a new game.
-- A mini robot completes the desired task on an uphill surface during test even through it was only trained in a flat surface environment.
 
 ## Define the Meta-Learning Problem
 
-In this post, we focus on the case when each desired task is a supervised learning problem like image classification. There is a lot of interesting literature on meta-learning with reinforcement learning problems (aka "Meta Reinforcement Learning"), but we would not cover them here.
+In this post, we focus on the case when each desired task is a supervised learning problem like image classification. 
 
 
 ### A Simple View
@@ -36,7 +31,6 @@ $$
 \theta^* = \arg\min_\theta \mathbb{E}_{\mathcal{D}\sim p(\mathcal{D})} [\mathcal{L}_\theta(\mathcal{D})]
 $$
 
-It looks very similar to a normal learning task, but *one dataset* is considered as *one data sample*. 
 
 *Few-shot classification* is an instantiation of meta-learning in the field of supervised learning. The dataset $$\mathcal{D}$$ is often split into two parts, a support set $$S$$ for learning and a prediction set $$B$$ for training or testing, $$\mathcal{D}=\langle S, B\rangle$$. Often we consider a *K-shot N-class classification* task: the support set contains K labelled examples for each of N classes.
 
@@ -134,11 +128,76 @@ $$
 a(\mathbf{x}, \mathbf{x}_i) = \frac{\exp(\text{cosine}(f(\mathbf{x}), g(\mathbf{x}_i))}{\sum_{j=1}^k\exp(\text{cosine}(f(\mathbf{x}), g(\mathbf{x}_j))}
 $$
 
+#### Simple Embedding
+
+In the simple version, an embedding function is a neural network with a single data sample as input. Potentially we can set $$f=g$$. 
+
+
+#### Full Context Embeddings
+
+The embedding vectors are critical inputs for building a good classifier. Taking a single data point as input might not be enough to efficiently gauge the entire feature space. Therefore, the Matching Network model further proposed to enhance the embedding functions by taking as input the whole support set $$S$$ in addition to the original input, so that the learned embedding can be adjusted based on the relationship with other support samples. 
+
+- $$g_\theta(\mathbf{x}_i, S)$$ uses a bidirectional LSTM to encode $$\mathbf{x}_i$$ in the context of the entire support set $$S$$.
+- $$f_\theta(\mathbf{x}, S)$$ encodes the test sample $$\mathbf{x}$$ visa an LSTM with read attention over the support set $$S$$.
+    1. First the test sample goes through a simple neural network, such as a CNN, to extract basic features, $$f'(\mathbf{x})$$.
+    2. Then an LSTM is trained with a read attention vector over the support set as part of the hidden state: <br/>
+    $$
+    \begin{aligned}
+    \hat{\mathbf{h}}_t, \mathbf{c}_t &= \text{LSTM}(f'(\mathbf{x}), [\mathbf{h}_{t-1}, \mathbf{r}_{t-1}], \mathbf{c}_{t-1}) \\
+    \mathbf{h}_t &= \hat{\mathbf{h}}_t + f'(\mathbf{x}) \\
+    \mathbf{r}_{t-1} &= \sum_{i=1}^k a(\mathbf{h}_{t-1}, g(\mathbf{x}_i)) g(\mathbf{x}_i) \\
+    a(\mathbf{h}_{t-1}, g(\mathbf{x}_i)) &= \text{softmax}(\mathbf{h}_{t-1}^\top g(\mathbf{x}_i)) = \frac{\exp(\mathbf{h}_{t-1}^\top g(\mathbf{x}_i))}{\sum_{j=1}^k \exp(\mathbf{h}_{t-1}^\top g(\mathbf{x}_j))}
+    \end{aligned}
+    $$
+    3. Eventually $$f(\mathbf{x}, S)=\mathbf{h}_K$$ if we do K steps of "read".
+
+
+This embedding method is called "Full Contextual Embeddings (FCE)". Interestingly it does help improve the performance on a hard task (few-shot classification on mini ImageNet), but makes no difference on a simple task (Omniglot).
+
+The training process in Matching Networks is designed to match inference at test time, see the details in the earlier [section](#training-in-the-same-way-as-testing). It is worthy of mentioning that the Matching Networks paper refined the idea that training and testing conditions should match.
+
+$$
+\theta^* = \arg\max_\theta \mathbb{E}_{L\subset\mathcal{L}}[ \mathbb{E}_{S^L \subset\mathcal{D}, B^L \subset\mathcal{D}} [\sum_{(\mathbf{x}, y)\in B^L} P_\theta(y\vert\mathbf{x}, S^L)]]
+$$
 
 
 
+### Relation Network
+
+**Relation Network (RN)** ([Sung et al., 2018](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf)) is similar to [siamese network](#convolutional-siamese-neural-network) but with a few differences:
+1. The relationship is not captured by a simple L1 distance in the feature space, but predicted by a CNN classifier $$g_\phi$$. The relation score between a pair of inputs, $$\mathbf{x}_i$$ and $$\mathbf{x}_j$$, is $$r_{ij} = g_\phi([\mathbf{x}_i, \mathbf{x}_j])$$ where $$[.,.]$$ is concatenation.
+2. The objective function is MSE loss instead of cross-entropy, because conceptually RN focuses more on predicting relation scores which is more like regression, rather than binary classification, $$\mathcal{L}(B) = \sum_{(\mathbf{x}_i, \mathbf{x}_j, y_i, y_j)\in B} (r_{ij} - \mathbf{1}_{y_i=y_j})^2$$.
 
 
+![relation-network]({{ '/assets/images/relation-network.png' | relative_url }})
+{: style="width: 100%;" class="center"}
+*Fig. 4. Relation Network architecture for a 5-way 1-shot problem with one query example. (Image source: [original paper](http://openaccess.thecvf.com/content_cvpr_2018/papers_backup/Sung_Learning_to_Compare_CVPR_2018_paper.pdf))*
+
+(Note: There is another [Relation Network](https://deepmind.com/blog/neural-approach-relational-reasoning/) for relational reasoning, proposed by DeepMind. Don't get confused.)
+
+
+### Prototypical Networks
+
+**Prototypical Networks** ([Snell, Swersky & Zemel, 2017](http://papers.nips.cc/paper/6996-prototypical-networks-for-few-shot-learning.pdf)) use an embedding function $$f_\theta$$ to encode each input into a $$M$$-dimensional feature vector. A *prototype* feature vector is defined for every class $$c \in \mathcal{C}$$, as the mean vector of the embedded support data samples in this class.
+
+$$
+\mathbf{v}_c = \frac{1}{|S_c|} \sum_{(\mathbf{x}_i, y_i) \in S_c} f_\theta(\mathbf{x}_i)
+$$
+
+
+![prototypical-networks]({{ '/assets/images/prototypical-networks.png' | relative_url }})
+{: style="width: 100%;" class="center"}
+*Fig. 5. Prototypical networks in the few-shot and zero-shot scenarios. (Image source: [original paper](http://papers.nips.cc/paper/6996-prototypical-networks-for-few-shot-learning.pdf))*
+
+The distribution over classes for a given test input $$\mathbf{x}$$ is a softmax over the inverse of distances between the test data embedding and prototype vectors.
+
+$$
+P(y=c\vert\mathbf{x})=\text{softmax}(-d_\varphi(f_\theta(\mathbf{x}), \mathbf{v}_c)) = \frac{\exp(-d_\varphi(f_\theta(\mathbf{x}), \mathbf{v}_c))}{\sum_{c' \in \mathcal{C}}\exp(-d_\varphi(f_\theta(\mathbf{x}), \mathbf{v}_{c'}))}
+$$
+
+where $$d_\varphi$$ can be any distance function as long as $$\varphi$$ is differentiable. In the paper, they used the squared euclidean distance.
+
+The loss function is the negative log-likelihood: $$\mathcal{L}(\theta) = -\log P_\theta(y=c\vert\mathbf{x})$$.
 
 
 
