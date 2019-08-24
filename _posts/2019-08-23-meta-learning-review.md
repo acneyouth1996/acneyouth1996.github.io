@@ -192,14 +192,15 @@ where $$d_\varphi$$ can be any distance function as long as $$\varphi$$ is diffe
 The loss function is the negative log-likelihood: $$\mathcal{L}(\theta) = -\log P_\theta(y=c\vert\mathbf{x})$$.
 
 
+
 ## Model-Based
 
-Model-based meta-learning models make no assumption on the form of $$P_\theta(y\vert\mathbf{x})$$. Rather it depends on a model designed specifically for fast learning : a model that updates its parameters rapidly with a few training steps. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model. 
+Model-based meta-learning approaches depends on a model designed specifically for fast learning : a model that updates its parameters rapidly with a few training steps. This rapid parameter update can be achieved by its internal architecture or controlled by another meta-learner model. 
 
 
 ### Memory-Augmented Neural Networks
 
-A family of model architectures use external memory storage to facilitate the learning process of neural networks, including [Neural Turing Machines]({{ site.baseurl }}{% post_url 2018-06-24-attention-attention %}#neural-turing-machines) and [Memory Networks](https://arxiv.org/abs/1410.3916). With an explicit storage buffer, it is easier for the network to rapidly incorporate new information and not to forget in the future. Such a model is known as **MANN**, short for "**Memory-Augmented Neural Network**".  Note that recurrent neural networks with only *internal memory* such as vanilla RNN or LSTM are not MANNs.
+A family of model architectures use external memory storage to facilitate the learning process of neural networks, including [Neural Turing Machines]({{ site.baseurl }}{% post_url 2018-06-24-attention-attention %}#neural-turing-machines) and [Memory Networks](https://arxiv.org/abs/1410.3916). With an explicit storage buffer, it is easier for the network to rapidly incorporate new information and not to forget in the future. Such a model is known as **MANN**, short for "**Memory-Augmented Neural Network**". 
 
 Because MANN is expected to encode new information fast and thus to adapt to new tasks after only a few samples, it fits well for meta-learning. Taking the Neural Turing Machine (NTM) as the base model, [Santoro et al. (2016)](http://proceedings.mlr.press/v48/santoro16.pdf) proposed a set of modifications on the training setup and the memory retrieval mechanisms (or "addressing mechanisms", deciding how to assign attention weights to memory vectors). 
 
