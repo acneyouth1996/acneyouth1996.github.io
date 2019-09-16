@@ -10,7 +10,8 @@ img: ri.jpg
 date: 2019-06-21 12:00:00
 ---
 
-This post is part of Jay Alammar's "[The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)" blog, this blog is very well written, so I shamelessly stole it's self-sttention explanation part in here.
+See this post: [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)" 
+<!-- 
 
 ## Self-Attention at a High Level
 
@@ -73,4 +74,4 @@ That concludes the self-attention calculation. The resulting vector is one we ca
 
 
 
-
+ -->
