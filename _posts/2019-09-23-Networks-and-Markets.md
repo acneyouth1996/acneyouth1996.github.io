@@ -3,29 +3,20 @@ layout: post
 comments: true
 mathjax: true
 priority: 440000
-title: "Networks and Markets Chapter 1"
+title: "Networks, Crowds and Markets Lec 1"
 tags: [Network Dynamics]
 excerpt: Network Dynamics
 img: manhattan.jpg
 date: 2019-09-23 00:00:00
 ---
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/65455259-e1c4e400-de14-11e9-9172-76ba401dae84.png" style="border:none;width:100%">
+</div>
 
-1. Definition:
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/65455312-f2755a00-de14-11e9-95a4-f4fd9ae6aa73.png" style="border:none;width:100%">
+</div>
 
-- utility fuctions: 
-$u_{1}$, $u_{2}$ for each of the players, where $u_{i}(a_{1}, a_{2})$ denotes the
-utility (i.e., “score”) of player i in the outcome where player 1 chose the action
-$a_{1}$ and player 2 chose $a_{2}$
-
-- Normal-form games:
-
-- Action profile: 
-
-
-2. Some notations
-
-- Let [n] = [1, 2, . . . , n];
-- Given an action set A, let A−i denote the set of actions for everyone but player i (formally, A−i = ×j6=iAj );
-- Similarly, given an action profile ~a, let a−i denote the action profile of everyone but player i;
-- We will use (ai, a−i) to describe the full action profile where player i plays ai and everyone else a−i;
-- To simplify notation, we sometimes directly specify u as a function from A → Rn (i.e., a function from outcomes to a vector of utilities where component i specifies the utility of player i).
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/65455325-fb662b80-de14-11e9-99a3-d74edc82904b.png" style="border:none;width:100%">
+</div>
