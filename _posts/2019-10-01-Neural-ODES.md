@@ -51,7 +51,6 @@ def odenet(z, t, theta):
 
 ## How to train ODE net?
 
-How do we do backprobagration in ODE-net?
 
 The objective we want to optimize can be written in this:
 
@@ -64,6 +63,11 @@ and we want to know
 $$
 \frac{\partial L}{\partial \theta}
 $$
+
+Simplily do backprobagration in ODE-net is a bad idea for two reasons:
+
+1. High memory cost.
+2. Extra numerical error.
 
 
 
