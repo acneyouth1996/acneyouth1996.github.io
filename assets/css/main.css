@@ -1486,9 +1486,9 @@ pre code {
   width: 600px;
   height: 300px;
   
-  /* -webkit-border-radius: 100%;
-          border-radius: 100%;  */
-  /* overflow: hidden; */
+  -webkit-border-radius: 100%;
+          border-radius: 100%;  
+  overflow: hidden;
   
 }
 

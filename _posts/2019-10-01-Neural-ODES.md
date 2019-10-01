@@ -3,7 +3,7 @@ layout: post
 comments: true
 mathjax: true
 priority: 440000
-title: "Neural ODEs in very detail"
+title: "Neural ODEs in Detail"
 tags: [Machine Learning]
 excerpt: Machine Learning
 img: ri.jpg
@@ -68,6 +68,12 @@ Simplily do backprobagration in ODE-net is a bad idea for two reasons:
 
 1. High memory cost.
 2. Extra numerical error.
+
+There is another easier method introduced in this paper, and the basic idea is to do back probagration via another ode solver.
+
+## Adjoint state and Reverse-mode derivative of an ODE initial value problem
+
+
 
 
 
