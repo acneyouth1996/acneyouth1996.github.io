@@ -49,6 +49,12 @@ def odenet(z, t, theta):
 ```
 
 
-## 
+## How to train ODE net?
+
+Key problem, how to do backprobagration in ODE-net?
+
+$$
+L(\theta)=L\left(\int_{t_{0}}^{t_{1}} f(\mathbf{z}(t), t, \theta) d t\right)
+$$
 
 
