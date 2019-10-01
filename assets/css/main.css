@@ -1414,8 +1414,8 @@ pre code {
   width: 120px;
   height: 120px;
   margin-right: 30px;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
+  /* -webkit-border-radius: 100%;
+          border-radius: 100%; */
 }
 
 .author-box .author-desc h2 {
@@ -1485,10 +1485,10 @@ pre code {
 .about-header .author-image-container {
   width: 150px;
   height: 150px;
-  align-items: center;
+  
   /* -webkit-border-radius: 100%;
           border-radius: 100%;  */
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0 auto 30px;
 }
 
