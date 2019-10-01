@@ -51,10 +51,18 @@ def odenet(z, t, theta):
 
 ## How to train ODE net?
 
-Key problem, how to do backprobagration in ODE-net?
+How do we do backprobagration in ODE-net?
+
+The objective we want to optimize can be written in this:
 
 $$
 L(\theta)=L\left(\int_{t_{0}}^{t_{1}} f(\mathbf{z}(t), t, \theta) d t\right)
+$$
+
+and what we want to know is 
+
+$$
+\frac{\partial L}{\partial \theta}
 $$
 
 
