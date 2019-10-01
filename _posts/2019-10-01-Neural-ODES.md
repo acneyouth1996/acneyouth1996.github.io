@@ -32,10 +32,23 @@ As you can see from the above equation, there is a some similarity between euler
 Example of ResNet:
 
 ```python
-def resnet(z):
+def resnet(z, theta):
     for t in [1:T]:
         z = z + f(z,t,theta)
     return z
 ```
+
+The key idea of ODE-Net is to make hidden states continuously defined with depth, in other words, use a 
+ODE solver to replace the whole for loop in resnet.
+
+```python
+def odenet(z, t, theta):
+    # zero and one is the start time and end time
+    return ODESolve(f, z , 0, 1, theta)
+    
+```
+
+
+## 
 
 
