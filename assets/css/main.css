@@ -1483,10 +1483,10 @@ pre code {
 }
 
 .about-header .author-image-container {
-  width: 100px;
-  height: 100px;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
+  width: 200px;
+  height: 300px;
+  /* -webkit-border-radius: 100%;
+          border-radius: 100%; */
   overflow: hidden;
   margin: 0 auto 30px;
 }
