@@ -4,8 +4,8 @@ comments: true
 mathjax: true
 priority: 440000
 title: "Networks, Crowds and Markets Lec 1"
-tags: [Network Dynamics]
-excerpt: Network Dynamics
+tags: [Network and Markets]
+excerpt: Network and Markets
 img: manhattan.jpg
 date: 2019-09-23 00:00:00
 ---
