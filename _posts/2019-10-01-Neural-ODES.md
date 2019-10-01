@@ -23,6 +23,19 @@ $$
 $$
 
 
+
+
 ## Similarity between Residual Block and Euler methods
+
+As you can see from the above equation, there is a some similarity between euler methods and residual block design.
+
+Example of ResNet:
+
+```python
+def resnet(z):
+    for t in [1:T]:
+        z = z + f(z,t,theta)
+    return z
+```
 
 
