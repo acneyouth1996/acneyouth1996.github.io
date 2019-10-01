@@ -59,10 +59,12 @@ $$
 L(\theta)=L\left(\int_{t_{0}}^{t_{1}} f(\mathbf{z}(t), t, \theta) d t\right)
 $$
 
-and what we want to know is 
+and we want to know 
 
 $$
 \frac{\partial L}{\partial \theta}
 $$
+
+
 
 
