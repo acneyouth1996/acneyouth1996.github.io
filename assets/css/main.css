@@ -1486,8 +1486,8 @@ pre code {
   width: 150px;
   height: 150px;
   align-items: center;
-  -webkit-border-radius: 100%;
-          border-radius: 100%; 
+  /* -webkit-border-radius: 100%;
+          border-radius: 100%;  */
   overflow: hidden;
   margin: 0 auto 30px;
 }
