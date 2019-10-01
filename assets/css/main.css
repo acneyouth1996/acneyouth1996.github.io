@@ -1488,8 +1488,8 @@ pre code {
   
   /* -webkit-border-radius: 100%;
           border-radius: 100%;  */
-  /* overflow: hidden; */
-  margin: 0 auto 30px;
+  overflow: hidden;
+  
 }
 
 .about-header .subtitle {
