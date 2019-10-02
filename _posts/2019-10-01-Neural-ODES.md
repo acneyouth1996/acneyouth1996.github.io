@@ -79,7 +79,7 @@ $$z(t_0)$$ is the hidden state at time $$t_0$$
 
 The first term $$
 \frac{d L}{d \mathbf{z}(t)}
-$$ is called **Adjoint** in this paper. and the dynamic of adjoint can actually be modeled by another ODE:
+$$ is called **Adjoint** in this paper. The adjoint state is actually the gradient with respect to the hidden state at a specified time t and the dynamic of adjoint can actually be modeled by another ODE:
 
  
 $$
