@@ -64,14 +64,24 @@ $$
 \frac{\partial L}{\partial \theta}
 $$
 
-Simplily do backprobagration in ODE-net is a bad idea for two reasons:
+Simplily do backpropagration in ODE-net is a bad idea for two reasons:
 
 1. High memory cost.
 2. Extra numerical error.
 
-There is another easier method introduced in this paper, and the basic idea is to do back probagration via another ode solver.
+There is another easier method introduced in this paper, and the basic idea is to do back propagration via another ode solver.
 
-## Adjoint state and Reverse-mode derivative of an ODE initial value problem
+## Adjoint state and Reverse-mode derivative(backpropagration) of an ODE initial value problem
+
+Normally if we do backpropagation in oder to get $$
+\frac{\partial L}{\partial \theta}
+$$, generally the first step would be compute the gradient of the loss with respect to the hidden states;
+
+$$
+\frac{\partial L}{\partial h{t}}
+$$
+
+
 
 
 
