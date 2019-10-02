@@ -136,6 +136,9 @@ $$
 
 Finally, we also get gradients with respect to $$t_0$$ and $$t_N$$ , the start and end of the integration interval.
 
+$$
+\frac{d L}{d t_{N}}=\mathbf{a}\left(t_{N}\right) f\left(\mathbf{z}\left(t_{N}\right), t_{N}, \theta\right) \quad \frac{d L}{d t_{0}}=\mathbf{a}_{t}\left(t_{0}\right)=\mathbf{a}_{t}\left(t_{N}\right)-\int_{t_{N}}^{t_{0}} \mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial t} d t
+$$
 
 
 
