@@ -89,7 +89,7 @@ $$
 \mathbf{a}(t)=\frac{d L}{d \mathbf{z}(t)}
 $$
 
-which is equivalent to gradient of the loss with respect to the hidden states in normal BP.
+The adjoint state is the gradient with respect to the hidden state at a specified time $$t$$
 
 the dynamic of adjoint could be depicted by another ODE which is :
 
