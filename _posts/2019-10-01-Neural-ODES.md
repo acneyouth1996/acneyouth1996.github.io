@@ -75,7 +75,7 @@ There is another easier method introduced in this paper, and the basic idea is t
 
 Normally if we do backpropagation in oder to get $$
 \frac{\partial L}{\partial \theta}
-$$, generally the first step would be compute the gradient of the loss with respect to the hidden states;
+$$, generally the first step would be compute the gradient of the loss with respect to the hidden states.
 
 $$
 \frac{\partial L}{\partial h(t)}
