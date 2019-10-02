@@ -83,7 +83,22 @@ $$
 
 since now the hidden state is dependent on time, so the problem further became computing the derivative with respect to time.
 
-Here the author introduce a notion called **adjoint**.
+Here the author introduce a notion called **adjoint**. the adjoint is defined as :
+
+$$
+\mathbf{a}(t)=\frac{d L}{d \mathbf{z}(t)}
+$$
+
+which is equivalent to gradient of the loss with respect to the hidden states in normal BP.
+
+the dynamic of adjoint could be depicted by another ODE which is :
+
+$$
+\frac{d \mathbf{a}(t)}{d t}=-\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}
+$$
+
+
+
 
 
 
