@@ -131,6 +131,8 @@ $$
 
 
 
+Finally, we also get gradients with respect to $$t_0$$ and $$t_N$$ , the start and end of the integration interval.
+
 
 
 
