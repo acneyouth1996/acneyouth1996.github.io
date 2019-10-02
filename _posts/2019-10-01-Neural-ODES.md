@@ -123,8 +123,10 @@ Similarly, the derivative with respect to $$\theta$$ can be also calculated.
 
 
 $$
+\begin{aligned}
 \frac{d L}{d \theta}= \frac{d L}{d z(t)} \frac{d z(t)}{d \theta} \\ =
 -\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)} \frac{\partial \mathbf{z}(t)}{\partial \theta}\\ =  -\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \theta}
+\end{aligned}
 $$
 
 
