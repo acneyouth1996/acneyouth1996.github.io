@@ -75,8 +75,13 @@ There is another easier and more efficient method introduced in this paper, and 
 
 To optimize $$L$$ one needs to compute the gradients wrt. its parameters: $$z(t_0), t_0, t_1, \theta$$.
 
-the dynamic of adjoint could be depicted by another ODE which is :
+$$z(t_0)$$ is the hidden state at time $$t_0$$
 
+The first term $$
+\frac{d L}{d \mathbf{z}(t)}
+$$ is called **Adjoint** in this paper. and the dynamic of adjoint can actually be modeled by another ODE:
+
+ 
 $$
 \frac{d \mathbf{a}(t)}{d t}=-\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}
 $$
