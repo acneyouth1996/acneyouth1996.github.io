@@ -113,13 +113,20 @@ follow the definition of derivative:
 \begin{aligned} \frac{d \mathbf{a}(t)}{d t} &=\lim _{\varepsilon \rightarrow 0^{+}} \frac{\mathbf{a}(t+\varepsilon)-\mathbf{a}(t)}{\varepsilon} \\ &=\lim _{\varepsilon \rightarrow 0^{+}} \frac{\mathbf{a}(t+\varepsilon)-\mathbf{a}(t+\varepsilon) \frac{\partial}{\partial \mathbf{z}(t)} T_{\varepsilon}(\mathbf{z}(t))}{\varepsilon} \\ &=\lim _{\varepsilon \rightarrow 0^{+}} \frac{\mathbf{a}(t+\varepsilon)-\mathbf{a}(t+\varepsilon) \frac{\partial}{\partial \mathbf{z}(t)}\left(\mathbf{z}(t)+\varepsilon f(\mathbf{z}(t), t, \theta)+\mathcal{O}\left(\varepsilon^{2}\right)\right)}{\varepsilon} \\ &=\lim _{\varepsilon \rightarrow 0^{+}} \frac{\mathbf{a}(t+\varepsilon)-\mathbf{a}(t+\varepsilon)\left(I+\varepsilon \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial z(t)}+\mathcal{O}\left(\varepsilon^{2}\right)\right)}{\varepsilon} \\ &=\lim _{\varepsilon \rightarrow 0^{+}} \frac{-\varepsilon \mathbf{a}(t+\varepsilon) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}+\mathcal{O}(\varepsilon)}{\varepsilon \mathbf{z}(t)}+\mathcal{O}(\varepsilon) \\ &=-\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)} \end{aligned}
 $$
 
-The adjoint at time $$t_0$$ can be write as 
+To get the value of $$a(t)$$, we simply need to call a ODE solver. and the adjoint at $$t_0$$ is 
 
 $$
-\mathbf{a}\left(t_{0}\right)=\mathbf{a}\left(t_{N}\right)+\int_{t_{N}}^{t_{0}} \frac{d \mathbf{a}(t)}{d t} d t=\frac{d L}{d \mathbf{z}(t_N)} -\int_{t_{N}}^{t_{0}} \mathbf{a}(t)^{T} \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}
+\mathbf{a}\left(t_{0}\right)=\mathbf{a}\left(t_{N}\right)+\int_{t_{N}}^{t_{0}} \frac{d \mathbf{a}(t)}{d t} d t=\frac{d L}{d \mathbf{z}\left(t_{N}\right)}-\int_{t_{N}}^{t_{0}} \mathbf{a}(t)^{T} \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}
 $$
 
+Similarly, the derivative with respect to $$\theta$$ can be also calculated.
 
+$$
+\frac{d L}{d \theta}= \frac{d L}{d z(t)} \frac{d z(t)}{d \theta} &=
+-\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)} \frac{\partial \mathbf{z}(t)}{\partial \theta}
+
+
+$$
 
 
 
