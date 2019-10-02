@@ -81,6 +81,12 @@ $$
 \frac{\partial L}{\partial h{t}}
 $$
 
+since now the hidden state is dependent on time, so the problem further became computing the derivative with respect to time.
+
+Here the author introduce a notion called **adjoint**.
+
+
+
 
 
 
