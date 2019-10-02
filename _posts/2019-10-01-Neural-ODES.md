@@ -69,33 +69,46 @@ Simplily do backpropagration in ODE-net is a bad idea for two reasons:
 1. High memory cost.
 2. Extra numerical error.
 
-There is another easier method introduced in this paper, and the basic idea is to do back propagration via another ode solver.
+There is another easier and more efficient method introduced in this paper, and the basic idea is to do back propagration via another ode solver.
 
 ## Adjoint state and Reverse-mode derivative(backpropagration) of an ODE initial value problem
 
-Normally if we do backpropagation in oder to get $$
-\frac{\partial L}{\partial \theta}
-$$, generally the first step would be compute the gradient of the loss with respect to the hidden states.
-
-$$
-\frac{\partial L}{\partial h(t)}
-$$
-
-since now the hidden state is dependent on time, so the problem further became computing the derivative with respect to time.
-
-Here the author introduce a notion called **adjoint**. the adjoint is defined as :
-
-$$
-\mathbf{a}(t)=\frac{d L}{d \mathbf{z}(t)}
-$$
-
-The adjoint state is the gradient with respect to the hidden state at a specified time $$t$$
+To optimize $$L$$ one needs to compute the gradients wrt. its parameters: $$z(t_0), t_0, t_1, \theta$$.
 
 the dynamic of adjoint could be depicted by another ODE which is :
 
 $$
 \frac{d \mathbf{a}(t)}{d t}=-\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)}
 $$
+
+**Proof**
+
+With a continuous hidden state, we can write the transformation after an $$\varepsilon$$ change in time as 
+
+$$
+\mathbf{z}(t+\varepsilon)=\int_{t}^{t+\varepsilon} f(\mathbf{z}(t), t, \theta) d t+\mathbf{z}(t)=T_{\varepsilon}(\mathbf{z}(t), t)
+$$
+
+By chain rule we have 
+
+$$
+\frac{d L}{\partial \mathbf{z}(t)}=\frac{d L}{d \mathbf{z}(t+\varepsilon)} \frac{d \mathbf{z}(t+\varepsilon)}{d \mathbf{z}(t)}
+$$
+
+or 
+
+$$
+\mathbf{a}(t)=\mathbf{a}(t+\varepsilon) \frac{\partial T_{\varepsilon}(\mathbf{z}(t), t)}{\partial \mathbf{z}(t)}
+$$
+
+follow the definition of 
+
+
+ 
+
+
+
+
 
 
 
