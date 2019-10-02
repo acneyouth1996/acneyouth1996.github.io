@@ -78,7 +78,7 @@ Normally if we do backpropagation in oder to get $$
 $$, generally the first step would be compute the gradient of the loss with respect to the hidden states;
 
 $$
-\frac{\partial L}{\partial h{t}}
+\frac{\partial L}{\partial h(t)}
 $$
 
 since now the hidden state is dependent on time, so the problem further became computing the derivative with respect to time.
