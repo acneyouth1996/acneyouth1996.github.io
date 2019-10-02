@@ -128,7 +128,7 @@ $$
 $$
 \begin{aligned}
 \frac{d L}{d \theta}&= \frac{d L}{d z(t)} \frac{d z(t)}{d \theta} \\ &=
--\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)} \frac{\partial \mathbf{z}(t)}{\partial \theta}\\ &=  -\mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \theta}
+\int_{t_{0}}^{t_{N}} \mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \mathbf{z}(t)} \frac{\partial \mathbf{z}(t)}{\partial \theta}\\ &= \int_{t_{0}}^{t_{N}} \mathbf{a}(t) \frac{\partial f(\mathbf{z}(t), t, \theta)}{\partial \theta}
 \end{aligned}
 $$
 
