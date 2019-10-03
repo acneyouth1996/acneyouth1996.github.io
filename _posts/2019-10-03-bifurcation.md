@@ -20,3 +20,5 @@ $$
 $$
 
 Here $$x$$ is the state variable and $$r$$ is the bifurcation parameter.
+
+- If $$r<0$$ there are two equilibrium points, a stable equilibrium point at $$-\sqrt{-r}$$ and an unstable one at $$+\sqrt{-r}$$.
