@@ -63,3 +63,7 @@ $$
 
 This equation is similar to the logistic equation but in this case we allow $$r$$ and $$x$$ to be positive or negative (while in the logistic equation $$x$$ and $$r$$ must be non-negative). The two fixed points are at $$x=0$$ and $$x=r$$. When the parameter $$r$$ is negative, the fixed point at $$x=0$$ is stable and the fixed point $$x=r$$ is unstable. But for $$r>0$$, the point at $$x=0$$ is unstable and the point at $$x=r$$ is stable. So the bifurcation occurs at $$r=0$$.
 
+## Pitchfork bifurcation
+
+### Definition
+
