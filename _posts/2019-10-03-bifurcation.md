@@ -100,3 +100,7 @@ In this case, for $$r<0$$ the equilibrium at $$x=0$$ is stable, and there are tw
 <div class="imgcap">
 <img src="https://user-images.githubusercontent.com/22668421/66153895-57396d00-e5ea-11e9-98cf-89452e0a954e.png" style="border:none;width:50%">
 </div>
+
+### Formal definition
+
+[wikipedia](https://en.wikipedia.org/wiki/Pitchfork_bifurcation)
