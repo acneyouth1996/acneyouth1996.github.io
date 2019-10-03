@@ -80,3 +80,9 @@ $$
 $$
 
 For negative values of $$r$$, there is one stable equilibrium at $$x=0$$. For $$r>0$$ there is an unstable equilibrium at $$x=0$$, and two stable equilibria at $$x=\pm \sqrt{r}$$.
+
+
+<div class="imgcap">
+<img src="https://user-images.githubusercontent.com/22668421/66153457-91563f00-e5e9-11e9-8590-0230c0004521.png" style="border:none;width:100%">
+</div>
+
