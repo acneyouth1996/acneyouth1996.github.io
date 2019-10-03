@@ -86,3 +86,13 @@ For negative values of $$r$$, there is one stable equilibrium at $$x=0$$. For $$
 <img src="https://user-images.githubusercontent.com/22668421/66153457-91563f00-e5e9-11e9-8590-0230c0004521.png" style="border:none;width:100%">
 </div>
 
+
+### Subcritical case
+
+The normal form for the subcritical case is
+
+$$
+\frac{d x}{d t}=r x+x^{3}
+$$
+
+In this case, for $$r<0$$ the equilibrium at $$x=0$$ is stable, and there are two unstable equilibria at $$ x=\pm \sqrt {-r}$$. For $$r>0$$ the equilibrium at $$x=0$$ is unstable.
