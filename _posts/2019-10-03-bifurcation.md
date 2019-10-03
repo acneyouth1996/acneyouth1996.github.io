@@ -12,7 +12,7 @@ date: 2019-10-03 12:00:00
 ## Saddle-Node bifurcation
 
 
-### Intro:
+### Definition:
 
 In the mathematical area of bifurcation theory a saddle-node bifurcation is a local bifurcation in which two fixed points (or equilibria) of a dynamical system collide and annihilate each other.
 If the phase space is one-dimensional, one of the equilibrium points is unstable (the saddle), while the other is stable (the node).
@@ -39,7 +39,27 @@ Here $$x$$ is the state variable and $$r$$ is the bifurcation parameter.
 
 
 An example of a saddle-node bifurcation in two dimensions occurs in the two-dimensional dynamical system:
+
+
 $$
 \begin{aligned} \frac{d x}{d t} &=\alpha-x^{2} \\ \frac{d y}{d t} &=-y \end{aligned}
 $$
+
+## Transcritical bifurcation
+
+### Definition
+A transcritical bifurcation is a particular kind of local bifurcation, meaning that it is characterized by an equilibrium having an eigenvalue whose real part passes through zero.
+
+A transcritical bifurcation is one in which a fixed point exists for all values of a parameter and is never destroyed. However, such a fixed point interchanges its stability with another fixed point as the parameter is varied. In other words, both before and after the bifurcation, there is one unstable and one stable fixed point. However, their stability is exchanged when they collide. So the unstable fixed point becomes stable and vice versa.
+
+
+### Normal Form
+
+The normal form of a transcritical bifurcation is
+
+$$
+\frac{d x}{d t}=r x-x^{2}
+$$
+
+This equation is similar to the logistic equation but in this case we allow $$r$$ and $$x$$ to be positive or negative (while in the logistic equation $$x$$ and $$r$$ must be non-negative). The two fixed points are at $$x=0$$ and $$x=r$$. When the parameter $$r$$ is negative, the fixed point at $$x=0$$ is stable and the fixed point $$x=r$$ is unstable. But for $$r>0$$, the point at $$x=0$$ is unstable and the point at $$x=r$$ is stable. So the bifurcation occurs at $$r=0$$.
 
