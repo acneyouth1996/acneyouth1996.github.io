@@ -67,3 +67,16 @@ This equation is similar to the logistic equation but in this case we allow $$r$
 
 ### Definition
 
+A pitchfork bifurcation is a particular type of local bifurcation where the system transitions from one fixed point to three fixed points. Pitchfork bifurcations, have two types – supercritical and subcritical.
+
+In continuous dynamical systems described by ODEs, i.e. flows—pitchfork bifurcations occur generically in systems with symmetry.
+
+### Supercritical case
+
+The normal form of the supercritical pitchfork bifurcation is
+
+$$
+\frac{d x}{d t}=r x-x^{3}
+$$
+
+For negative values of $$r$$, there is one stable equilibrium at $$x=0$$. For $$r>0$$ there is an unstable equilibrium at $$x=0$$, and two stable equilibria at $$x=\pm \sqrt{r}$$.
