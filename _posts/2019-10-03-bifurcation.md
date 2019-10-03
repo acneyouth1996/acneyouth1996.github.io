@@ -105,3 +105,23 @@ In this case, for $$r<0$$ the equilibrium at $$x=0$$ is stable, and there are tw
 
 [wikipedia](https://en.wikipedia.org/wiki/Pitchfork_bifurcation)
 
+## Hopf bifurcation
+
+
+### Definition
+
+A Hopf bifurcation is a critical point where a system's stability switches and a periodic solution arises. More accurately, it is a local bifurcation in which a fixed point of a dynamical system loses stability, as a pair of complex conjugate eigenvalues - of the linearization around the fixed point - crosses the complex plane imaginary axis. Under reasonably generic assumptions about the dynamical system, a small-amplitude limit cycle branches from the fixed point.
+
+### Overview 
+
+#### Supercritical and subcritical Hopf bifurcations
+
+The limit cycle is orbitally stable if a specific quantity called the first Lyapunov coefficient is negative,and the bifurcation is supercritical. Otherwise it is unstable and the bifurcation is subcritical.
+The normal form of a Hopf bifurcation is:
+
+$$
+\frac{d z}{d t}=z\left((\lambda+i)+b|z|^{2}\right)
+$$
+
+where $$z$$, $$b$$ are both complex and $$\lambda$$ is a parameter.
+
