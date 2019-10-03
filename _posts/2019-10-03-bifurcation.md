@@ -10,6 +10,8 @@ img: ri.jpg
 date: 2019-10-03 12:00:00
 ---
 ## Saddle-Node bifurcation
+
+
 1. Intro:
 
 In the mathematical area of bifurcation theory a saddle-node bifurcation is a local bifurcation in which two fixed points (or equilibria) of a dynamical system collide and annihilate each other.
