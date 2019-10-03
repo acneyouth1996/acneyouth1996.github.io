@@ -83,7 +83,7 @@ For negative values of $$r$$, there is one stable equilibrium at $$x=0$$. For $$
 
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/66153457-91563f00-e5e9-11e9-8590-0230c0004521.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/66153457-91563f00-e5e9-11e9-8590-0230c0004521.png" style="border:none;width:30%">
 </div>
 
 
@@ -98,9 +98,10 @@ $$
 In this case, for $$r<0$$ the equilibrium at $$x=0$$ is stable, and there are two unstable equilibria at $$ x=\pm \sqrt {-r}$$. For $$r>0$$ the equilibrium at $$x=0$$ is unstable.
 
 <div class="imgcap">
-<img src="https://user-images.githubusercontent.com/22668421/66153895-57396d00-e5ea-11e9-98cf-89452e0a954e.png" style="border:none;width:50%">
+<img src="https://user-images.githubusercontent.com/22668421/66153895-57396d00-e5ea-11e9-98cf-89452e0a954e.png" style="border:none;width:30%">
 </div>
 
 ### Formal definition
 
 [wikipedia](https://en.wikipedia.org/wiki/Pitchfork_bifurcation)
+
