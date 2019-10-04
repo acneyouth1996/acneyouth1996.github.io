@@ -128,7 +128,7 @@ where $$z$$, $$b$$ are both complex and $$\lambda$$ is a parameter.
 Note : $$b=\alpha +i\beta$$ , The number $$\alpha$$ is called the first Lyapunov coefficient.
 
 If $$\alpha$$ is negative then there is a stable limit cycle for $$\lambda > 0$$. The bifurcation is then called supercritical.
-If $$\alpha$$ is positive then there is an unstable limit cycle for $$\lambda <> 0$$. The bifurcation is called subcritical.
+If $$\alpha$$ is positive then there is an unstable limit cycle for $$\lambda < 0$$. The bifurcation is called subcritical.
 
 
 
