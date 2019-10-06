@@ -7,6 +7,21 @@ layout: home-page
           <img src="{{site.baseurl}}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{site.author}}">
         
         <p class="subtitle">{{site.about-author}}</p>
+
+        <div id="calendar" style="margin:0 auto;">
+          <div id="cal-heatmap"></div>
+          <div style="padding-top: 10px;">
+            <a
+              href="#"
+              style="margin-right:10px;"
+              id="cal-heatmap-PreviousDomain-selector"
+              ><i class="fa fa-chevron-left"></i
+            ></a>
+            <a href="#" style="float:right;" id="cal-heatmap-NextDomain-selector"
+              ><i class="fa fa-chevron-right"></i
+            ></a>
+          </div>
+        </div>
       
       <section class="about-body">
         <ul class="contact-list">
@@ -66,19 +81,6 @@ layout: home-page
         </ul>
       </section> <!-- End About Body-->
     </div> <!-- End About Container -->
-    <div id="calendar" style="margin:0 auto;">
-      <div id="cal-heatmap"></div>
-      <div style="padding-top: 10px;">
-        <a
-          href="#"
-          style="margin-right:10px;"
-          id="cal-heatmap-PreviousDomain-selector"
-          ><i class="fa fa-chevron-left"></i
-        ></a>
-        <a href="#" style="float:right;" id="cal-heatmap-NextDomain-selector"
-          ><i class="fa fa-chevron-right"></i
-        ></a>
-      </div>
-    </div>
+    
   </div> <!-- End Small Wrapper -->
   
