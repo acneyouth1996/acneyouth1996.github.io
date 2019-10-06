@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: defalut
 title: Reading List
 permalink: /reading/
 ---
