@@ -6,7 +6,7 @@ priority: 440000
 title: “Jensen Inequality”
 tags: [math & stats]
 excerpt: math
-img: ri.jpeg
+img: ri.jpg
 date: 2019-10-05 12:00:00
 ---
 
