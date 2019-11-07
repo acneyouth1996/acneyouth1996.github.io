@@ -53,8 +53,4 @@ if __name__ == '__main__':
         print("program terminated")
 ```
 
-#### Neural ODE for NFM
-
-### GAN
-
 
