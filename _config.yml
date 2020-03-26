@@ -11,8 +11,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: YONG HUANG # add your name
 author-pic: yong.jpeg
-about-author: Hi, I'm Yong Huang, a master student at Cornell Tech, Cornell University. I am interested in machine learning
-and its applications in medicine. 
+about-author: Hi, I'm Yong Huang. 
 
 # Contact links
 email: yh849@cornell.edu # Add your Email address
