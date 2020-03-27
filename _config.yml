@@ -11,7 +11,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: YONG HUANG # add your name
 author-pic: yong.jpeg
-about-author: Hi, I'm Yong Huang. This is 10 things about me.
+about-author: Hi, I'm Yong Huang. This is 10 things about me.\\
 1. I grew up in the northeast of China.
 2. My best childhood memories include railways trips, chunbing(春饼), and one unique flavor of ice cream that now I cannot find again.
 3. I moved back to where I was born when I was old enough for school.
