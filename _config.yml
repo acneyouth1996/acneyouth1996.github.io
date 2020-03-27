@@ -11,17 +11,18 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: YONG HUANG # add your name
 author-pic: yong.jpeg
-about-author: Hi, I'm Yong Huang. This is 10 things about me.\\
-1. I grew up in the northeast of China.
-2. My best childhood memories include railways trips, chunbing(春饼), and one unique flavor of ice cream that now I cannot find again.
-3. I moved back to where I was born when I was old enough for school.
-4. I was pretty into these things when I was a teenager, roller skating, pool and cult movies.
-5. I broke my left arm when I was 15, and I grow 2 inches in height during the recovery.
-6. I did my undergrad at Tongji University in Shanghai, the campus is breathtakingly beautiful.
-7. I was in Canada in 2016, it is cold but sweet, I wish I made more friends.
-8. I am doing a master in NYC, NYC is great except for the subway and New York Knicks. (Now I am adding COVID-19 to this list)
-9. I love movies and cinemas. 
-10. I am about to relocate to Southern California.
+about-author: > 
+  Hi, I'm Yong Huang. This is 10 things about me.
+  1. I grew up in the northeast of China.
+  2. My best childhood memories include railways trips, chunbing(春饼), and one unique flavor of ice cream that now I cannot find again.
+  3. I moved back to where I was born when I was old enough for school.
+  4. I was pretty into these things when I was a teenager, roller skating, pool and cult movies.
+  5. I broke my left arm when I was 15, and I grow 2 inches in height during the recovery.
+  6. I did my undergrad at Tongji University in Shanghai, the campus is breathtakingly beautiful.
+  7. I was in Canada in 2016, it is cold but sweet, I wish I made more friends.
+  8. I am doing a master in NYC, NYC is great except for the subway and New York Knicks. (Now I am adding COVID-19 to this list)
+  9. I love movies and cinemas. 
+  10. I am about to relocate to Southern California.
 
 # Contact links
 email: yh849@cornell.edu # Add your Email address
