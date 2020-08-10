@@ -11,18 +11,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: YONG HUANG # add your name
 author-pic: yong.jpeg
-about-author: Hi, I'm Yong Huang.(黄勇)
-  # Hi, I'm Yong Huang. Here are 10 things about me
-  # I grew up in the northeast of China 
-  # My best childhood memories include railways trips, chunbing(春饼), and one unique flavor of ice cream that now I cannot find again 
-  # I moved back to where I was born when I was old enough for school
-  # * I was pretty into these things when I was a teenager, roller skating, pool and cult movies.
-  # * I broke my left arm when I was 15, and I grow 2 inches in height during the recovery.
-  # * I did my undergrad at Tongji University in Shanghai, the campus is breathtakingly beautiful.
-  # * I was in Canada in 2016, it is cold but sweet, I wish I made more friends.
-  # * I am doing a master in NYC, NYC is great except for the subway and New York Knicks. (Now I am adding COVID-19 to this list)
-  # * I love movies and cinemas. 
-  # * I am about to relocate to Southern California.
+about-author: Hi, I'm Yong Huang. I've recently graduated from Cornell Tech and obtained my master's degree, I shall start my Ph.D. in Computer Science this fall at UC Irvine.
+Thank you for visiting my site.
 
 # Contact links
 email: yh849@cornell.edu # Add your Email address
