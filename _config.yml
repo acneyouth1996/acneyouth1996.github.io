@@ -11,7 +11,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: YONG HUANG # add your name
 author-pic: yong.jpeg
-about-author: Hi, I'm Yong Huang. I am a Ph.D. student in Computer Science at UC Irvine, I graduated from Cornell Tech and obtained my master's degree, Thank you for visiting my site.
+about-author: Hi, I'm Yong Huang. I am a Ph.D. student in Computer Science at UC Irvine, I graduated from Cornell Tech and obtained my master's degree, Thank you for visiting my site. 
+I recently removed several blogs because I found mathjax is broken, sorry about the incovenience.
 
 # Contact links
 email: yh849@cornell.edu # Add your Email address
