@@ -2,6 +2,7 @@
 layout: post
 comments: true
 mathjax: true
+usemathjax: true
 priority: 440000
 title: “Faster RCNN --- Towards Real-Time Object Detection with Region Proposal Networks”
 tags: [Computer Vision]
