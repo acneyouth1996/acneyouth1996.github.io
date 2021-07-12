@@ -2,6 +2,7 @@
 layout: post
 comments: true
 mathjax: true
+usemathjax: true
 priority: 440000
 title: “Feature detection 2”
 tags: [Computer Vision]
