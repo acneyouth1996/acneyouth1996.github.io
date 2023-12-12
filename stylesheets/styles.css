@@ -104,10 +104,21 @@ img {
 }
 
 header {
-  width:270px;
-  float:left;
-  position:fixed;
-  -webkit-font-smoothing:subpixel-antialiased;
+  width: auto; /* Adjust the width to a suitable value */
+  /* Remove the float: left; property */
+  position: fixed;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+figure {
+  text-align: left; /* Align the text within the figure to the left */
+  margin: 0 0 30px; /* Add margin to the bottom */
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 8px; /* Adjust as needed for spacing */
+  text-align: left; /* Align the caption text to the left */
 }
 
 header ul {
